@@ -19,6 +19,16 @@ type MenuFocusOptions = {
   focusIndex?: number
 }
 
+type TransitionState = 'idle' | 'enter' | 'exit'
+type TransitionDirection = 'left' | 'right' | 'none'
+
+type TransitionMenu = {
+  menu: NavMenu
+  id: string
+  state: TransitionState
+  direction: TransitionDirection
+}
+
 function classNames(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(' ')
 }
@@ -312,18 +322,13 @@ function DesktopMegaPanel({
   onItemEnter?: () => void
 }) {
   const panelRef = useRef<HTMLDivElement>(null)
-  type TransitionMenu = {
-    menu: NavMenu
-    id: string
-    state: 'enter' | 'exit' | 'idle'
-    direction: 'left' | 'right' | 'none'
-  }
 
   const TRANSITION_MS = 200
   const [transitionMenus, setTransitionMenus] = useState<TransitionMenu[]>([])
   const previousMenuLabelRef = useRef<string | null>(null)
 
-  const getDirection = useCallback((nextLabel: string) => {
+  const getDirection = useCallback(
+    (nextLabel: string): TransitionDirection => {
     const previousLabel = previousMenuLabelRef.current
     if (!previousLabel || previousLabel === nextLabel) {
       return 'none'
@@ -345,7 +350,9 @@ function DesktopMegaPanel({
     }
 
     return nextIndex > previousIndex ? 'right' : 'left'
-  }, [])
+    },
+    []
+  )
 
   useEffect(() => {
     if (!menu) {
@@ -362,7 +369,10 @@ function DesktopMegaPanel({
           entry.menu.label === menu.label
             ? {
                 ...entry,
-                state: entry.state === 'exit' ? 'enter' : entry.state,
+                state:
+                  entry.state === 'exit'
+                    ? ('enter' as TransitionState)
+                    : entry.state,
                 direction,
               }
             : entry
@@ -371,7 +381,7 @@ function DesktopMegaPanel({
 
       const exiting = prev.map((entry) => ({
         ...entry,
-        state: 'exit',
+        state: 'exit' as TransitionState,
         direction,
       }))
 
@@ -380,7 +390,7 @@ function DesktopMegaPanel({
         {
           menu,
           id: `${menu.label}-${Date.now()}`,
-          state: 'enter',
+          state: 'enter' as TransitionState,
           direction,
         },
       ]
@@ -405,7 +415,9 @@ function DesktopMegaPanel({
     const timeout = setTimeout(() => {
       setTransitionMenus((prev) =>
         prev.map((entry) =>
-          entry.state === 'enter' ? { ...entry, state: 'idle' } : entry
+          entry.state === 'enter'
+            ? { ...entry, state: 'idle' as TransitionState }
+            : entry
         )
       )
     }, TRANSITION_MS)
