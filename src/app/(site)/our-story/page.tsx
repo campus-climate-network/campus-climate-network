@@ -1,4 +1,12 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Our Story | Campus Climate Network',
+  description:
+    'Learn how Campus Climate Network emerged from the student divestment movement to become a coalition of 80+ organizations fighting for climate justice on campus.',
+}
 
 const timeline = [
   {
@@ -55,7 +63,7 @@ export default function OurStoryPage() {
           </div>
           <div className="flex-1 overflow-hidden rounded-3xl shadow-xl ring-1 ring-brand-primary/10">
             <Image
-              src="https://images.squarespace-cdn.com/content/v1/65185cb4b4a109287b7263ef/6d66edcc-4d29-4edc-b358-50544c429351/large.png"
+              src="/images/organizers-marching.png"
               alt="Campus organizers marching together"
               width={1280}
               height={853}
@@ -130,23 +138,23 @@ export default function OurStoryPage() {
               happens alone, and we are excited to build with you.
             </p>
             <div className="flex flex-wrap gap-3 text-sm font-semibold">
-              <a
+              <Link
                 className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-white transition hover:bg-brand-secondary"
                 href="/take-action"
               >
                 Join the network
-              </a>
-              <a
+              </Link>
+              <Link
                 className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-brand-primary transition hover:bg-brand-primary hover:text-white"
                 href="/donate"
               >
                 Invest in students
-              </a>
+              </Link>
             </div>
           </div>
           <div className="overflow-hidden rounded-3xl shadow-lg ring-1 ring-brand-primary/10">
             <Image
-              src="https://images.squarespace-cdn.com/content/v1/65185cb4b4a109287b7263ef/916625be-5800-4164-a4f6-ed2493981542/signal-2022-05-17-12-34-44-220-2.jpg"
+              src="/images/students-rally.jpg"
               alt="Students holding a banner during a campus action"
               width={1200}
               height={800}

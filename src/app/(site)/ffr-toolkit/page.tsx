@@ -1,4 +1,11 @@
+import type { Metadata } from 'next'
 import { ComingSoon } from '@/components/coming-soon'
+
+export const metadata: Metadata = {
+  title: 'Campus Toolkit | Campus Climate Network',
+  description:
+    'Step-by-step guide to launch Fossil Free Research campaigns at your university. Action planning templates, power mapping, and media resources.',
+}
 
 export default function FfrToolkitPage() {
   return (

@@ -150,24 +150,30 @@ export default async function PostPage(
     null
 
   return (
-    <main className="container mx-auto grid gap-8 p-6 sm:p-12">
+    <main className="mx-auto grid max-w-3xl gap-8 px-6 py-12 sm:py-16">
       <Link
         href="/resources/blog"
-        className="text-sm text-blue-500 hover:underline"
+        className="inline-flex items-center gap-1 text-sm font-medium text-brand-primary transition hover:text-brand-secondary"
       >
-        &larr; Back to posts
+        <span aria-hidden="true">←</span> Back to posts
       </Link>
 
-      <article className="prose max-w-3xl">
-        <header className="mb-8">
-          <h1>{post.title}</h1>
-          <p className="text-sm text-slate-500">
-            {post.publishedAt
-              ? new Date(post.publishedAt).toLocaleDateString()
-              : 'Unpublished'}
-          </p>
+      <article className="stack stack-relaxed">
+        <header className="stack stack-mid">
+          <div className="stack stack-snug">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-secondary">
+              {post.publishedAt
+                ? new Date(post.publishedAt).toLocaleDateString('en-US', {
+                    dateStyle: 'long',
+                  })
+                : 'Unpublished'}
+            </p>
+            <h1 className="text-4xl font-semibold leading-tight text-slate-900">
+              {post.title}
+            </h1>
+          </div>
 
-          <div className="mt-4 flex items-center gap-4">
+          <div className="flex items-center gap-4">
             {authorImageSrc && (
               <Image
                 src={authorImageSrc}
@@ -179,7 +185,7 @@ export default async function PostPage(
               />
             )}
             <div>
-              <p className="font-medium">
+              <p className="font-semibold text-slate-900">
                 {post.author?.name ?? 'Unknown author'}
               </p>
               {post.categories && post.categories.length > 0 && (
@@ -191,6 +197,8 @@ export default async function PostPage(
           </div>
         </header>
 
+        <hr className="border-slate-200" />
+
         {mainImageSrc && (
           <Image
             src={mainImageSrc}
@@ -201,16 +209,18 @@ export default async function PostPage(
             height={
               (mainImageDimensions ?? DEFAULT_MAIN_IMAGE_DIMENSIONS).height
             }
-            sizes="(max-width: 1200px) 100vw, 1200px"
-            className="mb-8 w-full rounded"
+            sizes="(max-width: 768px) 100vw, 768px"
+            className="w-full rounded-2xl"
             priority
           />
         )}
 
-        <PortableText
-          value={post.body as never}
-          components={portableTextComponents}
-        />
+        <div className="stack stack-mid text-base leading-relaxed text-slate-700 [&_h2]:mt-4 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-slate-900 [&_h3]:mt-2 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-slate-900 [&_a]:text-brand-primary [&_a]:underline [&_blockquote]:border-l-4 [&_blockquote]:border-brand-primary/30 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-slate-600 [&_ol]:list-decimal [&_ol]:pl-6 [&_ul]:list-disc [&_ul]:pl-6">
+          <PortableText
+            value={post.body as never}
+            components={portableTextComponents}
+          />
+        </div>
       </article>
     </main>
   )

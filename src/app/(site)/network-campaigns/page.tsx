@@ -1,3 +1,12 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Network Campaigns | Campus Climate Network',
+  description:
+    'Explore coordinated campus campaigns for fossil-free futures including Fossil Free Research, divestment, and ending fossil fuel sponsorships.',
+}
+
 const campaignHighlights = [
   {
     title: 'Fossil Free Research',
@@ -40,7 +49,7 @@ export default function NetworkCampaignsPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl stack stack-relaxed px-6">
+      <section className="mx-auto w-full max-w-6xl stack stack-relaxed px-6">
         <div className="stack stack-dense text-left">
           <h2 className="text-3xl font-semibold text-slate-900">
             Current priorities
@@ -66,7 +75,7 @@ export default function NetworkCampaignsPage() {
       </section>
 
       <section className="bg-slate-900 py-16">
-        <div className="mx-auto max-w-6xl stack px-6 text-left text-white">
+        <div className="mx-auto w-full max-w-6xl stack px-6 text-left text-white">
           <div className="stack stack-dense">
             <h2 className="text-3xl font-semibold">
               What we offer campaign teams
@@ -114,12 +123,12 @@ export default function NetworkCampaignsPage() {
           actions. Submit your campaign or reach out for support.
         </p>
         <div className="flex flex-wrap gap-4">
-          <a
+          <Link
             className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
             href="/take-action"
           >
             Join coordination calls
-          </a>
+          </Link>
           <a
             className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
             href="mailto:info@campusclimatenetwork.org"

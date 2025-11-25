@@ -28,7 +28,7 @@ export function ActionNetworkForm() {
       <style>{`
         #can-form-area-join-the-ccn .can_embed,
         #can-form-area-join-the-ccn form {
-          font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+          font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont,
             'Segoe UI', sans-serif !important;
           color: #0f172a !important;
         }

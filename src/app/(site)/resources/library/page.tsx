@@ -1,4 +1,11 @@
+import type { Metadata } from 'next'
 import { ComingSoon } from '@/components/coming-soon'
+
+export const metadata: Metadata = {
+  title: 'Resource Library | Campus Climate Network',
+  description:
+    'Organizing guides, downloadable materials, and campaign support resources for student climate justice campaigns.',
+}
 
 export default function ResourceLibraryPage() {
   return (

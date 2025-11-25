@@ -1,3 +1,12 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Our Funders | Campus Climate Network',
+  description:
+    'Learn about the foundations and donors investing in student-led climate justice organizing through Campus Climate Network.',
+}
+
 const funders = [
   {
     name: 'Climate Emergency Fund',
@@ -117,19 +126,19 @@ export default function OurFundersPage() {
           out to discuss sponsorships, multi-year support, or in-kind
           contributions.
         </p>
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           <a
             className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
             href="mailto:info@campusclimatenetwork.org"
           >
             Email our development team
           </a>
-          <a
+          <Link
             className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
             href="/donate"
           >
             Give online
-          </a>
+          </Link>
         </div>
       </section>
     </div>

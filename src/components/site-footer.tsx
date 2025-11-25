@@ -53,13 +53,13 @@ export function SiteFooter() {
               info@campusclimatenetwork.org
             </a>
             <p className="text-sm text-slate-400">
-              © Campus Climate Network 2025
+              © Campus Climate Network {new Date().getFullYear()}
             </p>
           </div>
           <div className="text-sm text-slate-300">
             Site built by{' '}
             <a
-              className=" transition hover:text-white"
+              className="transition hover:text-white"
               href="https://www.dylanwahbe.com"
             >
               Dylan Wahbe

@@ -1,3 +1,12 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Our People | Campus Climate Network',
+  description:
+    'Meet the students, staff organizers, fellows, and advisors powering Campus Climate Network and the student climate movement.',
+}
+
 const teamSections = [
   {
     title: 'Staff lead organizers',
@@ -64,15 +73,15 @@ export default function OurPeoplePage() {
             We post staff and fellowship openings on our hiring page and share
             opportunities through our newsletter.
           </p>
-          <div className="flex gap-4">
-            <a
-              className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
+          <div className="flex flex-wrap gap-4">
+            <Link
+              className="inline-flex items-center rounded-full bg-brand-accent px-5 py-2 text-sm font-semibold text-slate-900 transition hover:bg-yellow-300"
               href="/hiring"
             >
               See current openings
-            </a>
+            </Link>
             <a
-              className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
+              className="inline-flex items-center rounded-full border border-white/50 px-5 py-2 text-sm font-semibold text-white transition hover:bg-white hover:text-brand-primary"
               href="mailto:info@campusclimatenetwork.org"
             >
               Email your resume

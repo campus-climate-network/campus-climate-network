@@ -1,3 +1,11 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Work with CCN | Campus Climate Network',
+  description:
+    'Partner with Campus Climate Network as a faculty member, donor, foundation, or movement ally to support student climate leadership.',
+}
+
 export default function WorkWithCCNPage() {
   return (
     <div className="stack stack-giant pb-20">

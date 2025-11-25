@@ -1,3 +1,11 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "We're Hiring | Campus Climate Network",
+  description:
+    'Join Campus Climate Network. View open positions for organizers, fellows, and coordinators helping students win climate justice on campuses worldwide.',
+}
+
 const positions = [
   {
     title: 'Campaign Organizer (US)',

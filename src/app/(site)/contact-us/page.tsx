@@ -1,8 +1,17 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Contact Us | Campus Climate Network',
+  description:
+    'Get in touch with Campus Climate Network for collaborations, media requests, partnerships, or to learn more about our student climate organizing work.',
+}
+
 export default function ContactUsPage() {
   return (
     <div className="stack stack-giant pb-20">
       <section className="bg-brand-cream/60">
-        <div className="mx-auto w-full max-w-6xl stack stack-tight px-6 py-20 text-left">
+        <div className="mx-auto w-full max-w-6xl stack stack-mid px-6 py-20 text-left">
           <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
             Contact
           </p>
@@ -39,9 +48,12 @@ export default function ContactUsPage() {
             </h3>
             <p className="text-sm text-slate-600">
               Want to plug in? Visit{' '}
-              <a className="text-brand-primary underline" href="/take-action">
-                /take-action
-              </a>{' '}
+              <Link
+                className="text-brand-primary underline"
+                href="/take-action"
+              >
+                Take Action
+              </Link>{' '}
               or email us to receive the latest intake form.
             </p>
           </div>

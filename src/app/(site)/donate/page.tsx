@@ -1,3 +1,12 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Donate | Campus Climate Network',
+  description:
+    'Support student climate leadership with a donation to Campus Climate Network. Every dollar fuels organizing infrastructure, trainings, and rapid-response actions.',
+}
+
 const donationOptions = [
   {
     title: 'Monthly sustaining gift',
@@ -61,19 +70,19 @@ export default function DonatePage() {
             contribute through our fiscal sponsor or reach out directly for wire
             instructions.
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <a
               className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
               href="mailto:info@campusclimatenetwork.org"
             >
               Email for giving options
             </a>
-            <a
-              className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
+            <Link
+              className="inline-flex items-center rounded-full border border-white/50 px-5 py-2 text-sm font-semibold text-white transition hover:bg-white hover:text-brand-primary"
               href="/take-action"
             >
               Support student organizers
-            </a>
+            </Link>
           </div>
         </div>
       </section>

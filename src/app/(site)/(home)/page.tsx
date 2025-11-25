@@ -1,5 +1,13 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import { MovementCarousel } from '@/components/movement-carousel'
+
+export const metadata: Metadata = {
+  title: 'Campus Climate Network | Students Organizing for Climate Justice',
+  description:
+    'Campus Climate Network organizes students to win fossil-free research and climate justice on campus. Join 80+ member organizations worldwide.',
+}
 
 const pressLogos = [
   {
@@ -83,7 +91,7 @@ export default function Home() {
     <div className="stack stack-giant pb-20">
       <section className="relative isolate overflow-hidden bg-gradient-to-br from-brand-secondary via-brand-tertiary to-brand-primary text-white">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-24 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-          <div className="stack stack-tight">
+          <div className="stack stack-mid">
             <p className="text-xs uppercase tracking-[0.4em] text-brand-cream/70">
               Campus Climate Network
             </p>
@@ -91,23 +99,22 @@ export default function Home() {
               The student climate movement is here.
             </h1>
             <p className="text-lg text-brand-cream/90">
-              Students everywhere are organizing to end fossil fuel influence on
-              campus. We equip you with the strategy, training, and community to
-              win.
+              We provide students with the skills, resources, and connections
+              you need to run winning campaigns on campus.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a
+              <Link
                 className="inline-flex items-center rounded-full bg-brand-accent px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-lg transition hover:bg-yellow-300"
                 href="/take-action"
               >
                 Join Us
-              </a>
-              <a
+              </Link>
+              <Link
                 className="inline-flex items-center rounded-full border border-white/50 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white hover:text-brand-primary"
                 href="/donate"
               >
                 Donate
-              </a>
+              </Link>
             </div>
           </div>
           <div className="relative">
@@ -177,18 +184,18 @@ export default function Home() {
               toward fossil-free research.
             </p>
             <div className="flex flex-wrap gap-3 text-sm font-semibold">
-              <a
+              <Link
                 className="inline-flex items-center rounded-full bg-brand-primary px-4 py-2 text-white transition hover:bg-brand-secondary"
                 href="/our-network"
               >
                 Member Organizations
-              </a>
-              <a
+              </Link>
+              <Link
                 className="inline-flex items-center rounded-full border border-brand-primary px-4 py-2 text-brand-primary transition hover:bg-brand-primary hover:text-white"
                 href="/network-campaigns"
               >
                 Campaigns
-              </a>
+              </Link>
             </div>
           </div>
           <div className="rounded-3xl border border-brand-secondary/30 overflow-hidden">
@@ -247,12 +254,12 @@ export default function Home() {
               Are you a university student, faculty, alumni, or community member
               ready to push your institution to cut ties with fossil fuels?
             </p>
-            <a
+            <Link
               className="mt-6 inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
               href="/take-action"
             >
               Join Us
-            </a>
+            </Link>
           </div>
           <div className="rounded-3xl bg-brand-secondary/10 p-8 text-brand-secondary">
             <h2 className="text-3xl font-semibold">Support the work</h2>
@@ -260,18 +267,18 @@ export default function Home() {
               Donations fuel campus-wide organizing, leadership development, and
               rapid-response actions to hold universities accountable.
             </p>
-            <a
+            <Link
               className="mt-6 inline-flex items-center rounded-full bg-brand-secondary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-primary"
               href="/donate"
             >
               Donate
-            </a>
+            </Link>
           </div>
         </div>
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-6">
-        <div className="stack stack-tight text-left">
+        <div className="stack stack-mid text-left">
           <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
             We are the movement
           </p>

@@ -1,4 +1,11 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: 'Our Approach | Campus Climate Network',
+  description:
+    'Discover how Campus Climate Network trains student organizers, coordinates national campaigns, and builds long-term infrastructure for climate justice.',
+}
 
 const challenges = [
   {
@@ -51,7 +58,7 @@ export default function OurApproachPage() {
           </div>
           <div className="flex-1 overflow-hidden rounded-3xl shadow-xl ring-1 ring-brand-primary/10">
             <Image
-              src="https://images.squarespace-cdn.com/content/v1/65185cb4b4a109287b7263ef/16cad66b-9fa7-4e26-a95c-209479010545/open-uri20231023-281539-9fe2ar.jpg"
+              src="/images/students-rally.jpg"
               alt="Students rallying for climate justice"
               width={1280}
               height={853}

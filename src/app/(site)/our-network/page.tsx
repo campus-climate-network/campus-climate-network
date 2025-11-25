@@ -1,4 +1,12 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Our Network | Campus Climate Network',
+  description:
+    'Meet the student-led climate justice groups in the Campus Climate Network—a global coalition fighting for fossil-free futures on campuses worldwide.',
+}
 
 const memberOrgs = [
   {
@@ -115,12 +123,12 @@ export default function OurNetworkPage() {
           <p className="text-base text-slate-700">
             Does this sound like it could be your group?
           </p>
-          <a
+          <Link
             className="inline-flex items-center self-start rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
             href="/take-action"
           >
             Join us
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -216,12 +224,12 @@ export default function OurNetworkPage() {
           onboarding team will reach out.
         </p>
         <div className="flex flex-wrap gap-4">
-          <a
+          <Link
             className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
             href="/take-action"
           >
             Apply for membership
-          </a>
+          </Link>
           <a
             className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
             href="mailto:info@campusclimatenetwork.org"

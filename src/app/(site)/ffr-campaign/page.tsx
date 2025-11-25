@@ -1,15 +1,86 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Fossil Free Research Campaign | Campus Climate Network',
+  description:
+    'Join the Fossil Free Research campaign to cut fossil fuel money out of university research. Expose conflicts of interest and protect academic integrity.',
+}
+
 const talkingPoints = [
   {
     title: 'Expose conflicts of interest',
-    body: 'Fossil fuel funding distorts research agendas and gives polluters a seat at the table when universities should be acting for the public good.',
+    body: 'Audit every contract and gift so fossil fuel front groups can no longer hide behind academic logos or dictate research agendas.',
+    icon: (
+      <svg
+        className="h-6 w-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z" />
+        <circle cx="12" cy="12" r="2.5" />
+      </svg>
+    ),
   },
   {
     title: 'Protect academic integrity',
-    body: 'Universities must safeguard scientific credibility by rejecting funding that comes with strings attached or reputational whitewashing.',
+    body: 'Build ironclad firewall policies so departments cannot be used as PR arms for the very corporations fueling the crisis.',
+    icon: (
+      <svg
+        className="h-6 w-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 3 20 6v5c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6Z" />
+        <path d="M9 11.5 11 14l4-4.5" />
+      </svg>
+    ),
   },
   {
     title: 'Invest in climate justice',
-    body: 'Redirect resources toward community-led solutions, just transition research, and partnerships with frontline movements.',
+    body: 'Redirect endowment-scale resources toward community-led solutions, transition research, and frontline partnerships.',
+    icon: (
+      <svg
+        className="h-6 w-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M5 12c3-6 9-9 14-9-2 9-7 15-14 15-2 0-3-.5-3-.5s1 .5 3 .5c5 0 9-3 11-6" />
+        <path d="M5 12c0 4 2 7 2 7" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Win enforceable policies',
+    body: 'Organize trustees, faculty, and students to pass binding fossil-free funding rules that outlast any single administrator.',
+    icon: (
+      <svg
+        className="h-6 w-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="m4 10 5-5 5 5" />
+        <path d="M12 4v9a4 4 0 1 0 4 4" />
+        <path d="M16 19h6" />
+        <path d="m19 16 3 3-3 3" />
+      </svg>
+    ),
   },
 ]
 
@@ -32,10 +103,28 @@ export default function FFRCampaignPage() {
             Cut fossil fuel money out of university research.
           </h1>
           <p className="text-base text-slate-700">
-            The Fossil Free Research campaign demands that universities reject
-            funding from fossil fuel companies and their front groups. Students,
-            faculty, and alumni are organizing for policies that protect
-            research integrity and advance climate justice.
+            For decades, fossil fuel companies have known their products would
+            cause climate destruction—Shell’s own reports from the 1970s
+            predicted “major climatic changes.” Even as record-breaking heat,
+            abnormal storms, and mass displacement became reality, these
+            companies doubled down on disinformation and deregulation to protect
+            profits.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl stack stack-relaxed px-6">
+        <div className="stack stack-dense text-left">
+          <h2 className="text-3xl font-semibold text-slate-900">
+            Decades of deception
+          </h2>
+          <p className="text-base text-slate-600">
+            Polluters needed the prestige of elite institutions to sanitize
+            their biased research, so they poured money into centers,
+            departments, and labs—poisoning the very places meant to advance
+            human knowledge. They leveraged that borrowed credibility to shape
+            public policy and law, keeping business-as-usual intact while the
+            planet burned.
           </p>
         </div>
       </section>
@@ -46,23 +135,45 @@ export default function FFRCampaignPage() {
             Why Fossil Free Research matters
           </h2>
           <p className="text-base text-slate-600">
-            Universities have a responsibility to pursue science in the public
-            interest. Taking money from companies whose profits rely on
-            extraction and misinformation undermines that mission.
+            We are not letting Big Oil get away with capturing our campuses.
+            Students and faculty are turning universities into sites of
+            innovation and real climate solutions—not pipelines for corporate PR
+            and extraction. We are kicking fossil fuel money out of schools for
+            good.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {talkingPoints.map((point) => (
             <div
               key={point.title}
-              className="stack stack-dense rounded-3xl border border-brand-secondary/20 bg-white p-6 shadow-sm"
+              className="stack stack-relaxed rounded-3xl border border-brand-secondary/20 bg-white p-6 shadow-sm"
             >
-              <h3 className="text-lg font-semibold text-brand-primary">
-                {point.title}
-              </h3>
-              <p className="text-sm text-slate-600">{point.body}</p>
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-primary/10 text-brand-primary">
+                {point.icon}
+              </div>
+              <div className="stack stack-dense">
+                <h3 className="text-lg font-semibold text-brand-primary">
+                  {point.title}
+                </h3>
+                <p className="text-sm text-slate-600">{point.body}</p>
+              </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl stack stack-relaxed px-6">
+        <div className="stack stack-dense text-left">
+          <h2 className="text-3xl font-semibold text-slate-900">
+            What we’ve already exposed
+          </h2>
+          <p className="text-base text-slate-600">
+            Fossil Free Research is the flagship campaign of Campus Climate
+            Network. We have already uncovered millions of dollars in hidden
+            fossil funding, winning Fossil Free Research policies from
+            individual faculty members to entire departments, centers, and
+            universities. Your school could be next.
+          </p>
         </div>
       </section>
 
@@ -90,23 +201,23 @@ export default function FFRCampaignPage() {
           Plug into the campaign
         </h2>
         <p className="text-base text-slate-600">
-          Whether you are starting a Fossil Free Research chapter or scaling an
-          existing campaign, CCN can help with strategy, resources, and media
-          amplification.
+          Whether you are building a new site of innovation and real climate
+          solutions or scaling an existing campaign, CCN can help with strategy,
+          resources, and media amplification.
         </p>
-        <div className="flex gap-4">
-          <a
+        <div className="flex flex-wrap gap-4">
+          <Link
             className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
             href="/take-action"
           >
             Join a cohort call
-          </a>
-          <a
+          </Link>
+          <Link
             className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
             href="/open-letter"
           >
             Read the open letter
-          </a>
+          </Link>
         </div>
       </section>
     </div>
