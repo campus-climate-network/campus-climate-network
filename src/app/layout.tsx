@@ -20,11 +20,23 @@ const siteUrl = 'https://campusclimatenetwork.org'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Campus Climate Network',
+  title: {
+    default: 'Campus Climate Network',
+    template: '%s | Campus Climate Network',
+  },
   description:
     'Campus Climate Network organizes students to win fossil-free research and climate justice on campus.',
+  keywords: [
+    'climate justice',
+    'fossil fuel divestment',
+    'student organizing',
+    'fossil free research',
+    'campus climate',
+    'climate activism',
+  ],
   icons: {
     icon: '/favicon.png',
+    apple: '/favicon.png',
   },
   alternates: {
     canonical: '/',

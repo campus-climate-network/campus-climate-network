@@ -4,7 +4,10 @@ import Link from 'next/link'
 import { MovementCarousel } from '@/components/movement-carousel'
 
 export const metadata: Metadata = {
-  title: 'Campus Climate Network | Students Organizing for Climate Justice',
+  title: {
+    absolute:
+      'Campus Climate Network | Students Organizing for Climate Justice',
+  },
   description:
     'Campus Climate Network organizes students to win fossil-free research and climate justice on campus. Join 80+ member organizations worldwide.',
 }

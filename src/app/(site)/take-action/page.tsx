@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { ActionNetworkForm } from '@/components/action-network-form'
 
 export const metadata: Metadata = {
-  title: 'Take Action | Campus Climate Network',
+  title: 'Take Action',
   description:
     'Plug into the Campus Climate Network, get organizer support, and access trainings, toolkits, and funding for your climate justice campaign.',
 }

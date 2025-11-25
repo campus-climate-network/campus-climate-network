@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { ComingSoon } from '@/components/coming-soon'
 
 export const metadata: Metadata = {
-  title: 'FFR Archive | Campus Climate Network',
+  title: 'FFR Archive',
   description:
     'Reports, case studies, and investigative resources exposing fossil fuel influence in academia. Coming soon.',
 }

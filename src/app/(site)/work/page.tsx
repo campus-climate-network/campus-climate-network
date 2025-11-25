@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Work with CCN | Campus Climate Network',
+  title: 'Work with CCN',
   description:
     'Partner with Campus Climate Network as a faculty member, donor, foundation, or movement ally to support student climate leadership.',
 }

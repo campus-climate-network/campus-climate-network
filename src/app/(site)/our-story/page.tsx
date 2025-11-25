@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Our Story | Campus Climate Network',
+  title: 'Our Story',
   description:
     'Learn how Campus Climate Network emerged from the student divestment movement to become a coalition of 80+ organizations fighting for climate justice on campus.',
 }

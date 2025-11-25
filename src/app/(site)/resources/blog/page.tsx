@@ -4,7 +4,7 @@ import Link from 'next/link'
 import type { PostListItem } from '@/sanity/lib/types'
 
 export const metadata: Metadata = {
-  title: 'Blog | Campus Climate Network',
+  title: 'Blog',
   description:
     'Dispatches from student organizers, campaign wins, and movement insights powering fossil-free futures on campus.',
 }

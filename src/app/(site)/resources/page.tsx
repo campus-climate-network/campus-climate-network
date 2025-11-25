@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Resources | Campus Climate Network',
+  title: 'Resources',
   description:
     'Toolkits, training decks, campaign templates, and stories from student climate organizers. Resources to help you win your campus climate fight.',
 }
