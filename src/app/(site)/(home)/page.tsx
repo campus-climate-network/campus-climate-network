@@ -9,7 +9,7 @@ export const metadata: Metadata = {
       'Campus Climate Network | Students Organizing for Climate Justice',
   },
   description:
-    'Campus Climate Network organizes students to win fossil-free research and climate justice on campus. Join 80+ member organizations worldwide.',
+    'Campus Climate Network organizes students to win fossil-free research and climate justice on campus. Join 80+ member organizations nationwide.',
 }
 
 const pressLogos = [
@@ -223,24 +223,30 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-3">
             {[
               {
-                title: 'Train and empower organizers',
-                body: 'We convene climate justice leaders, share campaign strategies, and support organizing skills so students can win transformative campaigns.',
+                title: 'Train',
+                subtitle: 'Hone your organizing skills',
+                body: 'We provide you resources to research fossil fuel ties at your school and launch a campaign. Along the way, we develop each other as organizers through training and mentorship.',
               },
               {
-                title: 'Coordinate national campaigns',
-                body: 'We connect campus groups to take bold collective action that exposes fossil fuel influence and builds leverage with university leadership.',
+                title: 'Network',
+                subtitle: 'Connect with fellow student organizers',
+                body: 'Meet the students who are doing this work at other schools. Our network is a place of support and connection.',
               },
               {
-                title: 'Build long-term infrastructure',
-                body: 'We invest in students with stipends, fellowships, and toolkits—creating pathways for sustained leadership in the climate movement.',
+                title: 'Action',
+                subtitle: 'Take action together',
+                body: "Our movement is stronger when we use our collective voice. We facilitate coordinated action so we can't be ignored.",
               },
             ].map((item) => (
               <div
                 key={item.title}
                 className="rounded-3xl bg-white p-8 shadow-sm"
               >
-                <h3 className="text-xl font-semibold text-brand-primary">
+                <p className="text-sm font-semibold uppercase tracking-widest text-brand-secondary">
                   {item.title}
+                </p>
+                <h3 className="mt-2 text-xl font-semibold text-brand-primary">
+                  {item.subtitle}
                 </h3>
                 <p className="mt-3 text-sm text-slate-600">{item.body}</p>
               </div>
@@ -250,32 +256,31 @@ export default function Home() {
       </section>
 
       <section className="page-container">
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div className="rounded-3xl bg-brand-primary/10 p-8 text-brand-primary">
-            <h2 className="text-3xl font-semibold">Join the movement</h2>
-            <p className="mt-3 text-sm text-brand-primary/80">
-              Are you a university student, faculty, alumni, or community member
-              ready to push your institution to cut ties with fossil fuels?
-            </p>
-            <Link
-              className="mt-6 inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
-              href="/take-action"
-            >
-              Join Us
-            </Link>
-          </div>
-          <div className="rounded-3xl bg-brand-secondary/10 p-8 text-brand-secondary">
-            <h2 className="text-3xl font-semibold">Support the work</h2>
-            <p className="mt-3 text-sm text-brand-secondary/80">
-              Donations fuel campus-wide organizing, leadership development, and
-              rapid-response actions to hold universities accountable.
-            </p>
-            <Link
-              className="mt-6 inline-flex items-center rounded-full bg-brand-secondary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-primary"
-              href="/donate"
-            >
-              Donate
-            </Link>
+        <div className="stack stack-mid text-left">
+          <h2 className="text-3xl font-semibold text-slate-900">What's Next?</h2>
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="rounded-3xl bg-brand-primary/10 p-8 text-brand-primary">
+              <p className="text-lg text-brand-primary/90">
+                Are you a university student, faculty, alumni, or community member?
+              </p>
+              <Link
+                className="mt-6 inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
+                href="/take-action"
+              >
+                Join Us
+              </Link>
+            </div>
+            <div className="rounded-3xl bg-brand-secondary/10 p-8 text-brand-secondary">
+              <p className="text-lg text-brand-secondary/90">
+                Do you want to support the movement?
+              </p>
+              <Link
+                className="mt-6 inline-flex items-center rounded-full bg-brand-secondary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-primary"
+                href="/donate"
+              >
+                Donate
+              </Link>
+            </div>
           </div>
         </div>
       </section>

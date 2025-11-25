@@ -19,7 +19,7 @@ const timeline = [
   },
   {
     title: 'Campus Climate Network forms',
-    body: 'In 2023, organizers came together to coordinate campaigns, share tools, and invest in long-term leadership. CCN now supports more than 80 member organizations worldwide.',
+    body: 'In 2023, organizers came together to coordinate campaigns, share tools, and invest in long-term leadership. CCN now supports more than 80 member organizations nationwide.',
   },
 ]
 

@@ -5,7 +5,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Our Network',
   description:
-    'Meet the student-led climate justice groups in the Campus Climate Network—a global coalition fighting for fossil-free futures on campuses worldwide.',
+    'Meet the student-led climate justice groups in the Campus Climate Network—a national coalition fighting for fossil-free futures on campuses across the country.',
 }
 
 const memberOrgs = [
@@ -99,7 +99,7 @@ export default function OurNetworkPage() {
             Member Organizations
           </p>
           <h1 className="text-4xl font-semibold text-brand-primary">
-            A global coalition of students fighting for fossil-free futures.
+            A national coalition of students fighting for fossil-free futures.
           </h1>
           <p className="text-base text-slate-700">
             Our network is made up of powerful, grassroots, student-led groups

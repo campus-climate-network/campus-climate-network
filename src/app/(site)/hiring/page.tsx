@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: "We're Hiring",
   description:
-    'Join Campus Climate Network. View open positions for organizers, fellows, and coordinators helping students win climate justice on campuses worldwide.',
+    'Join Campus Climate Network. View open positions for organizers, fellows, and coordinators helping students win climate justice on campuses nationwide.',
 }
 
 const positions = [

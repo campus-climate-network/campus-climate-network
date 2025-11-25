@@ -74,20 +74,14 @@ export default function OurApproachPage() {
           <h2 className="text-3xl font-semibold text-slate-900">
             Vision & Mission
           </h2>
-          <p className="text-slate-600">
-            We strive for a world free from fossil fuel industry influence,
-            where universities become true climate leaders. Our mission is to
-            build power in the student climate movement by equipping organizers
-            with the training, resources, and community they need to win.
-          </p>
         </div>
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 lg:grid-cols-2">
           <div className="stack stack-dense rounded-3xl border border-brand-secondary/20 bg-white p-6 text-left shadow-sm">
             <h3 className="text-xl font-semibold text-brand-primary">Vision</h3>
             <p className="text-sm text-slate-600">
-              Universities should champion climate justice, free from fossil
-              fuel money and influence. We’re building the student power to make
-              that real.
+              We strive for a world free from the influence of the fossil fuel
+              industry and its enablers, where universities can become true
+              climate leaders.
             </p>
           </div>
           <div className="stack stack-dense rounded-3xl border border-brand-secondary/20 bg-white p-6 text-left shadow-sm">
@@ -95,19 +89,12 @@ export default function OurApproachPage() {
               Mission
             </h3>
             <p className="text-sm text-slate-600">
-              From trainings to rapid-response coordination, we help student
-              groups run winning campaigns and develop as long-term climate
-              justice leaders.
-            </p>
-          </div>
-          <div className="stack stack-dense rounded-3xl border border-brand-secondary/20 bg-white p-6 text-left shadow-sm">
-            <h3 className="text-xl font-semibold text-brand-primary">
-              Strategy
-            </h3>
-            <p className="text-sm text-slate-600">
-              We root our work in community care, political education, and
-              direct action—making sure every campus campaign contributes to a
-              broader movement for a just energy transition.
+              The Campus Climate Network is building power in the US student
+              climate movement. We are building a coalition of student-led
+              climate justice groups fighting to cut ties with the fossil fuel
+              industry and its enablers. We provide students with the training,
+              resources, and connections they need to run winning campaigns on
+              campus and become the next generation of climate justice leaders.
             </p>
           </div>
         </div>
