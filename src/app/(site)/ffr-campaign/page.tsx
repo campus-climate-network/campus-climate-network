@@ -165,7 +165,7 @@ export default function FFRCampaignPage() {
       <section className="page-container stack stack-relaxed">
         <div className="stack stack-dense text-left">
           <h2 className="text-3xl font-semibold text-slate-900">
-            What we've already exposed
+            What we&apos;ve already exposed
           </h2>
           <p className="text-base text-slate-600">
             Fossil Free Research is the flagship campaign of Campus Climate
