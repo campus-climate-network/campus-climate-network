@@ -127,7 +127,7 @@ export const navEntries: NavEntry[] = [
         title: 'Learn more',
         items: [
           {
-            label: 'Research Archive',
+            label: 'FFR Reports',
             href: '/ffr-archive',
             description:
               'Reports exposing fossil interests in academic research.',
