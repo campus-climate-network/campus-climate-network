@@ -33,3 +33,7 @@ body {
 h1 {
   font-family: var(--font-bungee);
 }
+
+h2 {
+  font-size: 1.875rem; /* 30px */
+}

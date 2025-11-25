@@ -34,7 +34,7 @@ export default function DonatePage() {
 
       <section className="mx-auto w-full max-w-6xl space-y-10 px-6">
         <div className="space-y-4 text-left">
-          <h2 className="text-2xl font-semibold text-slate-900">
+          <h2 className="text-3xl font-semibold text-slate-900">
             Ways to give
           </h2>
         </div>
@@ -55,7 +55,7 @@ export default function DonatePage() {
 
       <section className="bg-slate-900 py-16">
         <div className="mx-auto w-full max-w-6xl space-y-8 px-6 text-left text-white">
-          <h2 className="text-2xl font-semibold">Online giving coming soon</h2>
+          <h2 className="text-3xl font-semibold">Online giving coming soon</h2>
           <p className="text-sm text-slate-200">
             We’re setting up donation infrastructure on the new site. For now,
             contribute through our fiscal sponsor or reach out directly for wire

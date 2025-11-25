@@ -42,7 +42,7 @@ export default function FFRCampaignPage() {
 
       <section className="mx-auto w-full max-w-6xl space-y-10 px-6">
         <div className="space-y-4 text-left">
-          <h2 className="text-2xl font-semibold text-slate-900">
+          <h2 className="text-3xl font-semibold text-slate-900">
             Why Fossil Free Research matters
           </h2>
           <p className="text-base text-slate-600">
@@ -86,7 +86,7 @@ export default function FFRCampaignPage() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl space-y-6 px-6 text-left">
-        <h2 className="text-2xl font-semibold text-slate-900">
+        <h2 className="text-3xl font-semibold text-slate-900">
           Plug into the campaign
         </h2>
         <p className="text-base text-slate-600">

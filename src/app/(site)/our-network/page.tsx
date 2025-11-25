@@ -25,17 +25,39 @@ export default function OurNetworkPage() {
             A global coalition of students fighting for fossil-free futures.
           </h1>
           <p className="text-base text-slate-700">
-            Campus Climate Network is home to more than 80 student-led groups
-            across North America, Europe, Africa, and Oceania. From divestment
-            to Fossil Free Research to climate justice campaigns, our members
-            share tactics, resources, and solidarity.
+            Our network is made up of powerful, grassroots, student-led groups
+            fighting for climate justice on campus. There are three simple
+            criteria for becoming a member of the Campus Climate Network:
           </p>
+          <ol className="list-decimal space-y-2 pl-6 text-base text-slate-700">
+            <li>
+              Currently running or planning to run a campaign that involves
+              cutting ties with the fossil fuel industry and its enablers.
+            </li>
+            <li>
+              At least one member of the organization attends at least one
+              coalition call per month.
+            </li>
+            <li>
+              At least three active members on Slack, with at least two being
+              underclassmen.
+            </li>
+          </ol>
+          <p className="text-base text-slate-700">
+            Does this sound like it could be your group?
+          </p>
+          <a
+            className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
+            href="/take-action"
+          >
+            Join us
+          </a>
         </div>
       </section>
 
       <section className="mx-auto w-full max-w-6xl space-y-10 px-6">
         <div className="space-y-4 text-left">
-          <h2 className="text-2xl font-semibold text-slate-900">
+          <h2 className="text-3xl font-semibold text-slate-900">
             Who’s in the network
           </h2>
           <p className="text-base text-slate-600">
@@ -101,7 +123,7 @@ export default function OurNetworkPage() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl space-y-6 px-6 text-left">
-        <h2 className="text-2xl font-semibold text-slate-900">
+        <h2 className="text-3xl font-semibold text-slate-900">
           Join the network
         </h2>
         <p className="text-base text-slate-600">

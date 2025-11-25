@@ -767,6 +767,30 @@ function MobileMenuSection({
   onToggle: () => void
   onNavigate: () => void
 }) {
+  const contentId = useId()
+  const contentRef = useRef<HTMLDivElement>(null)
+  const [contentHeight, setContentHeight] = useState(0)
+
+  useEffect(() => {
+    const node = contentRef.current
+    if (!node) return
+
+    const updateHeight = () => {
+      setContentHeight(node.scrollHeight)
+    }
+
+    updateHeight()
+
+    if (typeof ResizeObserver === 'undefined') {
+      return
+    }
+
+    const observer = new ResizeObserver(() => updateHeight())
+    observer.observe(node)
+
+    return () => observer.disconnect()
+  }, [menu])
+
   return (
     <div>
       <button
@@ -774,6 +798,7 @@ function MobileMenuSection({
         onClick={onToggle}
         className="flex w-full items-center justify-between gap-3 text-left text-base font-semibold text-slate-800"
         aria-expanded={expanded}
+        aria-controls={contentId}
       >
         {menu.label}
         <svg
@@ -796,39 +821,47 @@ function MobileMenuSection({
         </svg>
       </button>
       <div
+        id={contentId}
+        aria-hidden={!expanded}
         className={classNames(
-          'mt-3 space-y-4 border-l border-slate-200 pl-4 text-sm text-slate-600 transition-all duration-200',
-          expanded
-            ? 'max-h-96 opacity-100'
-            : 'max-h-0 overflow-hidden opacity-0'
+          'overflow-hidden transition-[max-height,opacity] duration-200 ease-out',
+          expanded ? 'opacity-100' : 'pointer-events-none opacity-0'
         )}
+        style={{
+          maxHeight: expanded ? contentHeight : 0,
+        }}
       >
-        {menu.columns.map((column) => (
-          <div key={`${menu.label}-${column.title}`} className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-secondary/80">
-              {column.title}
-            </p>
-            <div className="space-y-2">
-              {column.items.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={onNavigate}
-                  className="block rounded-lg bg-slate-50/60 px-3 py-2 text-slate-700 transition hover:bg-brand-primary/10 hover:text-brand-primary"
-                >
-                  <span className="block text-sm font-medium">
-                    {item.label}
-                  </span>
-                  {item.description ? (
-                    <span className="mt-1 block text-xs text-slate-500">
-                      {item.description}
+        <div
+          ref={contentRef}
+          className="mt-3 space-y-4 border-l border-slate-200 pl-4 text-sm text-slate-600"
+        >
+          {menu.columns.map((column) => (
+            <div key={`${menu.label}-${column.title}`} className="space-y-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-secondary/80">
+                {column.title}
+              </p>
+              <div className="space-y-2">
+                {column.items.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={onNavigate}
+                    className="block rounded-lg bg-slate-50/60 px-3 py-2 text-slate-700 transition hover:bg-brand-primary/10 hover:text-brand-primary"
+                  >
+                    <span className="block text-sm font-medium">
+                      {item.label}
                     </span>
-                  ) : null}
-                </Link>
-              ))}
+                    {item.description ? (
+                      <span className="mt-1 block text-xs text-slate-500">
+                        {item.description}
+                      </span>
+                    ) : null}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   )

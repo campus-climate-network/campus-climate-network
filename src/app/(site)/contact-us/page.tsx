@@ -18,7 +18,7 @@ export default function ContactUsPage() {
 
       <section className="mx-auto w-full max-w-6xl space-y-8 px-6">
         <div className="rounded-3xl border border-brand-secondary/20 bg-white p-8 shadow-sm">
-          <h2 className="text-xl font-semibold text-brand-primary">
+          <h2 className="text-3xl font-semibold text-brand-primary">
             General inquiries
           </h2>
           <p className="mt-3 text-sm text-slate-600">
@@ -59,7 +59,7 @@ export default function ContactUsPage() {
 
       <section className="bg-slate-900 py-16">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-6 text-left text-white">
-          <h2 className="text-2xl font-semibold">Stay in the loop</h2>
+          <h2 className="text-3xl font-semibold">Stay in the loop</h2>
           <p className="text-sm text-slate-200">
             Newsletter signups and text alerts are coming soon. Email us now and
             we’ll make sure you receive the first announcement.

@@ -27,7 +27,7 @@ export default function OpenLetterPage() {
 
       <section className="mx-auto w-full max-w-6xl space-y-8 px-6">
         <div className="space-y-4 text-left">
-          <h2 className="text-2xl font-semibold text-slate-900">
+          <h2 className="text-3xl font-semibold text-slate-900">
             Why sign on?
           </h2>
           <p className="text-base text-slate-600">
@@ -77,7 +77,7 @@ export default function OpenLetterPage() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl space-y-6 px-6 text-left">
-        <h2 className="text-2xl font-semibold text-slate-900">Add your name</h2>
+        <h2 className="text-3xl font-semibold text-slate-900">Add your name</h2>
         <p className="text-base text-slate-600">
           We’re finalizing the new signatory form. In the meantime, contact us
           and we’ll keep you updated about the next release of signatures.

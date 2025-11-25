@@ -43,7 +43,7 @@ export default function OurFundersPage() {
 
       <section className="mx-auto w-full max-w-6xl space-y-10 px-6">
         <div className="space-y-4 text-left">
-          <h2 className="text-2xl font-semibold text-slate-900">
+          <h2 className="text-3xl font-semibold text-slate-900">
             Featured Institutional Supporters
           </h2>
           <p className="text-base text-slate-600">
@@ -72,7 +72,7 @@ export default function OurFundersPage() {
       <section className="bg-slate-900 py-16">
         <div className="mx-auto w-full max-w-6xl space-y-8 px-6 text-left text-white">
           <div className="space-y-3">
-            <h2 className="text-2xl font-semibold">
+            <h2 className="text-3xl font-semibold">
               How funding moves through CCN
             </h2>
             <p className="text-sm text-slate-200">
@@ -107,7 +107,7 @@ export default function OurFundersPage() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl space-y-6 px-6 text-left">
-        <h2 className="text-2xl font-semibold text-slate-900">
+        <h2 className="text-3xl font-semibold text-slate-900">
           Partner with us
         </h2>
         <p className="text-base text-slate-600">

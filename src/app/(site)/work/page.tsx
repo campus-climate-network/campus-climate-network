@@ -19,7 +19,7 @@ export default function WorkWithCCNPage() {
 
       <section className="mx-auto w-full max-w-6xl space-y-10 px-6">
         <div className="space-y-4 text-left">
-          <h2 className="text-2xl font-semibold text-slate-900">
+          <h2 className="text-3xl font-semibold text-slate-900">
             Ways to work with us
           </h2>
         </div>
@@ -56,7 +56,7 @@ export default function WorkWithCCNPage() {
 
       <section className="bg-slate-900 py-16">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-6 text-left text-white">
-          <h2 className="text-2xl font-semibold">Get in touch</h2>
+          <h2 className="text-3xl font-semibold">Get in touch</h2>
           <p className="text-sm text-slate-200">
             We tailor partnerships to your goals and our movement’s needs. Reach
             out and we’ll set up a time to talk.

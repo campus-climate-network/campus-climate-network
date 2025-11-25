@@ -35,7 +35,7 @@ export default function TakeActionPage() {
 
       <section className="mx-auto w-full max-w-6xl space-y-10 px-6">
         <div className="text-left">
-          <h2 className="text-2xl font-semibold text-slate-900">
+          <h2 className="text-3xl font-semibold text-slate-900">
             How onboarding works
           </h2>
         </div>
@@ -56,7 +56,7 @@ export default function TakeActionPage() {
 
       <section className="bg-slate-900 py-16">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-6 text-left text-white">
-          <h2 className="text-2xl font-semibold">Fill out the interest form</h2>
+          <h2 className="text-3xl font-semibold">Fill out the interest form</h2>
           <p className="text-sm text-slate-200">
             We’re migrating our Squarespace form to the new site. For now, send
             us an email with “Join CCN” in the subject line and we’ll send the
@@ -73,7 +73,7 @@ export default function TakeActionPage() {
 
       <section className="mx-auto w-full max-w-6xl px-6">
         <div className="rounded-3xl bg-brand-primary/10 p-8">
-          <h2 className="text-xl font-semibold text-brand-primary">
+          <h2 className="text-3xl font-semibold text-brand-primary">
             Upcoming opportunities
           </h2>
           <ul className="mt-4 space-y-3 text-sm text-slate-700">

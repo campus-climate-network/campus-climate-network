@@ -68,7 +68,7 @@ export default async function Page() {
                           {publishedOn}
                         </span>
                       )}
-                      <h2 className="text-2xl font-semibold leading-snug text-slate-900 transition-colors group-hover:text-brand-primary">
+                      <h2 className="text-3xl font-semibold leading-snug text-slate-900 transition-colors group-hover:text-brand-primary">
                         {post.title}
                       </h2>
                     </div>

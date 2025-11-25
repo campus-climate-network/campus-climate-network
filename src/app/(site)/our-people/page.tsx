@@ -34,7 +34,7 @@ export default function OurPeoplePage() {
 
       <section className="mx-auto w-full max-w-6xl space-y-10 px-6">
         <div className="space-y-4 text-left">
-          <h2 className="text-2xl font-semibold text-slate-900">Our team</h2>
+          <h2 className="text-3xl font-semibold text-slate-900">Our team</h2>
           <p className="text-base text-slate-600">
             Detailed bios are coming soon. Until then, this gives you a sense of
             the structure supporting our network.
@@ -57,7 +57,7 @@ export default function OurPeoplePage() {
 
       <section className="bg-slate-900 py-16">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-6 text-left text-white">
-          <h2 className="text-2xl font-semibold">
+          <h2 className="text-3xl font-semibold">
             Interested in joining the team?
           </h2>
           <p className="text-sm text-slate-200">
