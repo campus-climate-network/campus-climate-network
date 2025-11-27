@@ -96,47 +96,33 @@ export const navEntries: NavEntry[] = [
           {
             label: 'FFR Campaign',
             href: '/ffr-campaign',
+            description:
+              'End fossil fuel industry influence over academic research.',
           },
           {
             label: 'Open Letter',
             href: '/open-letter',
+            description:
+              'Sign the call for universities to reject fossil fuel funding.',
           },
         ],
       },
       {
-        title: 'Learn More',
+        title: 'Reports',
         items: [
           {
             label: 'FFR Reports',
             href: '/ffr-archive',
-          },
-          {
-            label: 'Campus Toolkit',
-            href: '/ffr-toolkit',
+            description:
+              'Research exposing fossil fuel ties to university programs.',
           },
         ],
       },
     ],
   },
   {
-    label: 'Resources',
-    columns: [
-      {
-        title: 'Explore',
-        items: [
-          {
-            label: 'Resource Library',
-            href: '/resources/library',
-            description: 'Toolkits and guides for student campaigners.',
-          },
-          {
-            label: 'Blog',
-            href: '/resources/blog',
-            description: 'News, wins, and stories from across the network.',
-          },
-        ],
-      },
-    ],
+    label: 'Blog',
+    href: '/resources/blog',
   },
   {
     label: 'Donate',

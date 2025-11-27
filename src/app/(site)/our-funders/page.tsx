@@ -9,13 +9,23 @@ export const metadata: Metadata = {
 }
 
 const funders = [
+  { name: '128 Collective' },
   { name: 'Broad Reach Fund' },
+  { name: 'Energy Transition Fund' },
+  { name: 'Erol Foundation' },
+  { name: 'The Kaplan Family Fund' },
+  { name: 'The Sunrise Project' },
+  { name: 'Wallace Global Fund' },
+  { name: 'Winslow Foundation' },
+  { name: 'Youth Climate Justice Fund' },
+  {
+    name: 'The Brown University Climate Accountability Lab',
+    subtitle: '(via Broad Reach Fund)',
+  },
   {
     name: 'The University of Miami Climate Accountability Lab',
     subtitle: '(via the KR Foundation)',
   },
-  { name: 'The Winslow Foundation' },
-  { name: 'Rockefeller Philanthropy Advisors' },
 ]
 
 export default function OurFundersPage() {
@@ -54,7 +64,7 @@ export default function OurFundersPage() {
         <StaggerReveal
           staggerDelay={100}
           variant="blossom"
-          className="grid gap-4 max-w-xl"
+          className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl"
         >
           {funders.map((funder) => (
             <div
@@ -130,12 +140,12 @@ export default function OurFundersPage() {
             contributions.
           </p>
           <div className="mt-4 flex flex-wrap gap-4">
-            <a
+            <Link
               className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
-              href="mailto:info@campusclimatenetwork.org"
+              href="/contact-us"
             >
-              Email Our Development Team
-            </a>
+              Contact Us
+            </Link>
             <Link
               className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
               href="/donate"

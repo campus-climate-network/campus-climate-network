@@ -41,6 +41,7 @@ const pressLogos = [
     image: '/press-logos/boston-globe.png',
     width: 300,
     height: 47,
+    href: 'https://www.bostonglobe.com/2025/02/18/science/mit-decarbonization-plan-saves-millions/',
   },
   {
     name: 'The Independent',
@@ -102,7 +103,7 @@ export default function Home() {
             </h1>
             <p className="text-base sm:text-lg text-brand-cream/90">
               We provide students with the skills, resources, and connections
-              you need to run winning campaigns on campus.
+              they need to run winning campaigns on campus.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -158,38 +159,38 @@ export default function Home() {
               Featured in
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm uppercase tracking-[0.3em] text-brand-cream/70 sm:grid-cols-3 md:flex md:flex-wrap md:items-center md:justify-center md:gap-6">
-            {pressLogos.map((logo) => {
-              const content = (
-                <div className="flex h-full w-full items-center justify-center">
-                  <Image
-                    src={logo.image}
-                    alt={`${logo.name} logo`}
-                    width={logo.width}
-                    height={logo.height}
-                    className="max-h-full max-w-full object-contain"
-                    sizes="(max-width: 768px) 140px, 160px"
-                  />
-                </div>
-              )
-              return logo.href ? (
-                <a
-                  key={logo.name}
-                  href={logo.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-16 items-center justify-center rounded-xl bg-brand-cream/70 px-3 py-2 shadow-sm transition hover:bg-brand-cream hover:shadow-md sm:h-20 md:w-40 md:px-4 md:py-3"
-                >
-                  {content}
-                </a>
-              ) : (
-                <div
-                  key={logo.name}
-                  className="flex h-16 items-center justify-center rounded-xl bg-brand-cream/70 px-3 py-2 shadow-sm sm:h-20 md:w-40 md:px-4 md:py-3"
-                >
-                  {content}
-                </div>
-              )
-            })}
+              {pressLogos.map((logo) => {
+                const content = (
+                  <div className="flex h-full w-full items-center justify-center">
+                    <Image
+                      src={logo.image}
+                      alt={`${logo.name} logo`}
+                      width={logo.width}
+                      height={logo.height}
+                      className="max-h-full max-w-full object-contain"
+                      sizes="(max-width: 768px) 140px, 160px"
+                    />
+                  </div>
+                )
+                return logo.href ? (
+                  <a
+                    key={logo.name}
+                    href={logo.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-16 items-center justify-center rounded-xl bg-brand-cream/70 px-3 py-2 shadow-sm transition hover:bg-brand-cream hover:shadow-md sm:h-20 md:w-40 md:px-4 md:py-3"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div
+                    key={logo.name}
+                    className="flex h-16 items-center justify-center rounded-xl bg-brand-cream/70 px-3 py-2 shadow-sm sm:h-20 md:w-40 md:px-4 md:py-3"
+                  >
+                    {content}
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
@@ -248,9 +249,9 @@ export default function Home() {
       <section className="bg-brand-cream/40 section-hero">
         <div className="page-container stack stack-relaxed text-left">
           <ScrollReveal variant="fade-up">
-              <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-                What we do
-              </h2>
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
+              What we do
+            </h2>
           </ScrollReveal>
           <StaggerReveal
             staggerDelay={120}
@@ -294,9 +295,9 @@ export default function Home() {
       <section className="page-container">
         <div className="stack stack-mid text-left">
           <ScrollReveal variant="fade-up">
-              <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-                What&apos;s next?
-              </h2>
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
+              What&apos;s next?
+            </h2>
           </ScrollReveal>
           <StaggerReveal
             staggerDelay={150}

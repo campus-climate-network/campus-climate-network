@@ -191,8 +191,9 @@ export default async function PostPage(
     null
 
   return (
-    <main className="mx-auto grid max-w-3xl gap-6 px-[var(--spacing-container)] section-hero sm:gap-8">
-      <Link
+    <div className="page-wrapper">
+      <div className="mx-auto max-w-3xl px-[var(--spacing-container)] section-hero stack stack-relaxed">
+        <Link
         href="/resources/blog"
         className="inline-flex items-center gap-1 text-sm font-medium text-brand-primary transition hover:text-brand-secondary"
       >
@@ -261,6 +262,7 @@ export default async function PostPage(
           />
         </div>
       </article>
-    </main>
+      </div>
+    </div>
   )
 }

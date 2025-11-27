@@ -46,10 +46,10 @@ const reports = [
 
 export default function FfrReportsPage() {
   return (
-    <main className="min-h-screen bg-stone-950">
+    <div className="page-wrapper !pb-0 bg-stone-950">
       {/* Hero */}
-      <section className="relative py-16 md:py-24 lg:py-32">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="section-hero">
+        <div className="page-container">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-tight">
               <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-stone-400">
@@ -68,8 +68,8 @@ export default function FfrReportsPage() {
       </section>
 
       {/* Reports Grid */}
-      <section className="pb-16 md:pb-24 lg:pb-32">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="section-dark">
+        <div className="page-container">
           <StaggerReveal
             staggerDelay={100}
             variant="blossom"
@@ -111,7 +111,6 @@ export default function FfrReportsPage() {
           </StaggerReveal>
         </div>
       </section>
-
-    </main>
+    </div>
   )
 }

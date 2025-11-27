@@ -147,19 +147,19 @@ h1 {
 .page-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem; /* reduced gap on mobile */
+  gap: 2rem; /* 32px on mobile */
   padding-bottom: var(--spacing-page-bottom);
 }
 
 @media (min-width: 640px) {
   .page-wrapper {
-    gap: 3rem;
+    gap: 2.5rem; /* 40px */
   }
 }
 
 @media (min-width: 1024px) {
   .page-wrapper {
-    gap: 4rem; /* matches stack-giant on desktop */
+    gap: 3rem; /* 48px */
   }
 }
 

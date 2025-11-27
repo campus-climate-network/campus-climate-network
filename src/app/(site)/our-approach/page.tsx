@@ -40,7 +40,7 @@ const pillars = [
 
 export default function OurApproachPage() {
   return (
-    <div className="page-wrapper">
+    <div className="page-wrapper !pb-0">
       <section className="bg-brand-cream/60 section-hero">
         <div className="page-container flex flex-col gap-10 lg:flex-row lg:items-center">
           <div className="flex-1 stack stack-tight">
@@ -48,7 +48,8 @@ export default function OurApproachPage() {
               Our Approach
             </p>
             <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
-              We&apos;re organizing the next generation of climate justice leaders.
+              We&apos;re organizing the next generation of climate justice
+              leaders.
             </h1>
             <p className="text-base text-slate-700">
               Campus Climate Network empowers students to challenge fossil fuel
@@ -81,25 +82,25 @@ export default function OurApproachPage() {
         <StaggerReveal
           staggerDelay={150}
           variant="blossom"
-          className="grid gap-6 lg:grid-cols-2"
+          className="stack stack-loose max-w-3xl"
         >
-          <div className="stack stack-dense rounded-3xl border border-brand-secondary/20 bg-white p-6 text-left shadow-sm">
+          <div className="stack stack-snug">
             <h3 className="text-xl font-semibold text-brand-primary">Vision</h3>
-            <p className="text-sm text-slate-600">
+            <p className="text-base text-slate-600">
               We strive for a world free from the influence of the fossil fuel
               industry and its enablers, where universities can become true
               climate leaders.
             </p>
           </div>
-          <div className="stack stack-dense rounded-3xl border border-brand-secondary/20 bg-white p-6 text-left shadow-sm">
+          <div className="stack stack-snug">
             <h3 className="text-xl font-semibold text-brand-primary">
               Mission
             </h3>
-            <p className="text-sm text-slate-600">
-              The Campus Climate Network is building power in the US student
-              climate movement. We are building a coalition of student-led
-              climate justice groups fighting to cut ties with the fossil fuel
-              industry and its enablers. We provide students with the training,
+            <p className="text-base text-slate-600">
+              Campus Climate Network is building power in the US student climate
+              movement. We are building a coalition of student-led climate
+              justice groups fighting to cut ties with the fossil fuel industry
+              and its enablers. We provide students with the training,
               resources, and connections they need to run winning campaigns on
               campus and become the next generation of climate justice leaders.
             </p>
@@ -111,9 +112,12 @@ export default function OurApproachPage() {
         <div className="page-container stack stack-tight text-white">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-dense">
-              <h2 className="text-2xl font-semibold sm:text-3xl">What we&apos;re up against</h2>
+              <h2 className="text-2xl font-semibold sm:text-3xl">
+                What we&apos;re up against
+              </h2>
               <p className="text-sm text-slate-200">
-                We&apos;re honest about the landscape so we can strategize to win.
+                We&apos;re honest about the landscape so we can strategize to
+                win.
               </p>
             </div>
           </ScrollReveal>

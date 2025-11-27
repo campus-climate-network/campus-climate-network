@@ -57,6 +57,10 @@ export function SiteFooter() {
             </a>
             .
           </p>
+
+          <p className="text-xs text-slate-400">
+            © Campus Climate Network {new Date().getFullYear()}
+          </p>
           <p className="text-xs text-slate-400">
             Site built by{' '}
             <a
@@ -65,9 +69,6 @@ export function SiteFooter() {
             >
               Dylan Wahbe
             </a>
-          </p>
-          <p className="text-xs text-slate-400">
-            © Campus Climate Network {new Date().getFullYear()}
           </p>
         </div>
         <div className="order-1 grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-3 lg:order-2 lg:grid-cols-3">

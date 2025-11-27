@@ -20,13 +20,13 @@ const steps = [
   },
   {
     title: 'Access toolkits & funding',
-    body: 'Unlock campaign playbooks, trainings, and mini-grants tailored to divestment, Fossil Free Research, and other climate justice goals.',
+    body: 'Unlock campaign playbooks, trainings, and mini-grants tailored to divestment, Fossil Free Research, and other climate justice campaigns.',
   },
 ]
 
 export default function TakeActionPage() {
   return (
-    <div className="page-wrapper">
+    <div className="page-wrapper !pb-0">
       <section className="bg-brand-cream/60 section-hero">
         <div className="page-container stack stack-tight text-left">
           <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
@@ -79,30 +79,6 @@ export default function TakeActionPage() {
             </div>
           </ScrollReveal>
         </div>
-      </section>
-
-      <section className="page-container">
-        <ScrollReveal variant="blossom">
-          <div className="stack stack-dense rounded-3xl bg-brand-primary/10 p-6 sm:p-8">
-            <h2 className="text-2xl font-semibold text-brand-primary sm:text-3xl">
-              Upcoming opportunities
-            </h2>
-            <ul className="stack-list-snug text-sm text-slate-700">
-              <li>
-                • College Climate Gathering applications open this fall—check your
-                email after you sign up.
-              </li>
-              <li>
-                • New organizer trainings launch monthly, covering campaign
-                strategy, base building, and media skills.
-              </li>
-              <li>
-                • Fellowships and stipends available for select campuses each
-                semester.
-              </li>
-            </ul>
-          </div>
-        </ScrollReveal>
       </section>
     </div>
   )

@@ -27,7 +27,7 @@ export default async function Page() {
   const hasPosts = posts.length > 0
 
   return (
-    <main className="page-wrapper">
+    <div className="page-wrapper">
       <section className="bg-brand-primary/10 section-hero">
         <div className="page-container text-brand-primary">
           <div className="stack stack-tight max-w-3xl">
@@ -46,18 +46,6 @@ export default async function Page() {
       </section>
 
       <section className="page-container stack stack-relaxed text-left">
-        <ScrollReveal variant="fade-up">
-          <header className="stack stack-compact">
-            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
-              From the Network
-            </p>
-            <p className="text-base text-slate-600">
-              Explore the latest updates, reflections, and resources from student
-              climate organizers everywhere.
-            </p>
-          </header>
-        </ScrollReveal>
-
         {hasPosts ? (
           <StaggerReveal
             staggerDelay={100}
@@ -107,12 +95,13 @@ export default async function Page() {
                 No stories yet. Check back soon.
               </p>
               <p className="mt-2 text-sm text-slate-600">
-                We&apos;re gathering reflections from organizers across the movement.
+                We&apos;re gathering reflections from organizers across the
+                movement.
               </p>
             </div>
           </ScrollReveal>
         )}
       </section>
-    </main>
+    </div>
   )
 }
