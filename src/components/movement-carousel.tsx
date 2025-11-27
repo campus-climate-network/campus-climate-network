@@ -44,28 +44,28 @@ export function MovementCarousel({ highlights }: MovementCarouselProps) {
           priority={current === 0}
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/40 via-slate-900/10 to-transparent" />
-        <div className="absolute inset-x-6 bottom-6 stack stack-snug text-white">
-          <p className="text-xs uppercase tracking-[0.35em] text-white/70">
+        <div className="absolute inset-x-4 bottom-4 stack stack-snug text-white sm:inset-x-6 sm:bottom-6">
+          <p className="text-[10px] uppercase tracking-[0.35em] text-white/70 sm:text-xs">
             Student wins
           </p>
-          <h3 className="text-2xl font-semibold leading-tight">
+          <h3 className="text-lg font-semibold leading-tight sm:text-xl md:text-2xl">
             {activeHighlight.title}
           </h3>
-          <p className="text-sm text-white/80 md:max-w-2xl">
+          <p className="text-xs text-white/80 sm:text-sm md:max-w-2xl">
             {activeHighlight.description}
           </p>
         </div>
-        <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3">
+        <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-2 sm:px-3">
           <button
             type="button"
             onClick={previous}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/80 text-slate-700 shadow-sm transition hover:bg-white"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-slate-700 shadow-sm transition hover:bg-white sm:h-10 sm:w-10"
             aria-label="Previous highlight"
           >
             <svg
               viewBox="0 0 20 20"
               fill="none"
-              className="h-5 w-5"
+              className="h-4 w-4 sm:h-5 sm:w-5"
               aria-hidden="true"
             >
               <path
@@ -80,13 +80,13 @@ export function MovementCarousel({ highlights }: MovementCarouselProps) {
           <button
             type="button"
             onClick={next}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/80 text-slate-700 shadow-sm transition hover:bg-white"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-slate-700 shadow-sm transition hover:bg-white sm:h-10 sm:w-10"
             aria-label="Next highlight"
           >
             <svg
               viewBox="0 0 20 20"
               fill="none"
-              className="h-5 w-5"
+              className="h-4 w-4 sm:h-5 sm:w-5"
               aria-hidden="true"
             >
               <path

@@ -13,11 +13,11 @@ export default function ContactUsPage() {
     <div className="page-wrapper">
       <section className="bg-brand-cream/60 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
             Contact
           </p>
-          <h1 className="text-4xl font-semibold text-brand-primary">
-            Let’s connect.
+          <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
+            Let&apos;s connect.
           </h1>
           <p className="text-base text-slate-700">
             Reach out to collaborate, request resources, or learn more about
@@ -29,7 +29,7 @@ export default function ContactUsPage() {
       <section className="page-container stack">
         <ScrollReveal variant="blossom">
           <div className="stack stack-dense rounded-3xl border border-brand-secondary/20 bg-white p-8 shadow-sm">
-            <h2 className="text-3xl font-semibold text-brand-primary">
+            <h2 className="text-2xl font-semibold text-brand-primary sm:text-3xl">
               General inquiries
             </h2>
             <p className="text-sm text-slate-600">
@@ -79,7 +79,7 @@ export default function ContactUsPage() {
       <section className="bg-slate-900 section-dark">
         <div className="page-container stack stack-tight text-left text-white">
           <ScrollReveal variant="fade-up">
-            <h2 className="text-3xl font-semibold">Stay in the loop</h2>
+            <h2 className="text-2xl font-semibold sm:text-3xl">Stay in the loop</h2>
             <p className="mt-4 text-sm text-slate-200">
               Newsletter signups and text alerts are coming soon. Email us now and
               we&apos;ll make sure you receive the first announcement.

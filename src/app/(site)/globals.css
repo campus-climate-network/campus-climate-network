@@ -11,11 +11,31 @@
   --brand-sky: #73bcf0;
   --brand-cream: #fff4eb;
 
-  /* Spacing tokens */
-  --spacing-section: 5rem; /* 80px - hero/main sections */
-  --spacing-section-sm: 4rem; /* 64px - dark/accent sections */
-  --spacing-container: 1.5rem; /* 24px - horizontal padding */
-  --spacing-page-bottom: 5rem; /* 80px - page bottom padding */
+  /* Spacing tokens - mobile first */
+  --spacing-section: 3rem; /* 48px - hero/main sections on mobile */
+  --spacing-section-sm: 2.5rem; /* 40px - dark/accent sections on mobile */
+  --spacing-container: 1rem; /* 16px - horizontal padding on mobile */
+  --spacing-page-bottom: 3rem; /* 48px - page bottom padding on mobile */
+}
+
+/* Tablet and up */
+@media (min-width: 640px) {
+  :root {
+    --spacing-section: 4rem; /* 64px */
+    --spacing-section-sm: 3rem; /* 48px */
+    --spacing-container: 1.5rem; /* 24px */
+    --spacing-page-bottom: 4rem; /* 64px */
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+  :root {
+    --spacing-section: 5rem; /* 80px */
+    --spacing-section-sm: 4rem; /* 64px */
+    --spacing-container: 1.5rem; /* 24px */
+    --spacing-page-bottom: 5rem; /* 80px */
+  }
 }
 
 @theme inline {
@@ -127,8 +147,20 @@ h1 {
 .page-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 4rem; /* matches stack-giant */
+  gap: 2.5rem; /* reduced gap on mobile */
   padding-bottom: var(--spacing-page-bottom);
+}
+
+@media (min-width: 640px) {
+  .page-wrapper {
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-wrapper {
+    gap: 4rem; /* matches stack-giant on desktop */
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

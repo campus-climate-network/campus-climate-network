@@ -23,10 +23,10 @@ export default function OurFundersPage() {
     <div className="page-wrapper">
       <section className="bg-brand-cream/60 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
             Our Funders
           </p>
-          <h1 className="text-4xl font-semibold text-brand-primary">
+          <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
             Resourcing student power for climate justice.
           </h1>
           <p className="text-base text-slate-700">
@@ -41,7 +41,7 @@ export default function OurFundersPage() {
       <section className="page-container stack stack-relaxed">
         <ScrollReveal variant="fade-up">
           <div className="stack stack-dense text-left">
-            <h2 className="text-3xl font-semibold text-slate-900">
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
               Featured institutional supporters
             </h2>
             <p className="text-base text-slate-600">
@@ -76,7 +76,7 @@ export default function OurFundersPage() {
         <div className="page-container stack text-left text-white">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-snug">
-              <h2 className="text-3xl font-semibold">
+              <h2 className="text-2xl font-semibold sm:text-3xl">
                 How funding moves through CCN
               </h2>
               <p className="text-sm text-slate-200">
@@ -120,7 +120,7 @@ export default function OurFundersPage() {
 
       <section className="page-container stack stack-tight text-left">
         <ScrollReveal variant="fade-up">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
             Partner with us
           </h2>
           <p className="mt-4 text-base text-slate-600">

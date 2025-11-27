@@ -27,10 +27,10 @@ export default function DonatePage() {
     <div className="page-wrapper">
       <section className="bg-brand-secondary/10 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
             Donate
           </p>
-          <h1 className="text-4xl font-semibold text-brand-primary">
+          <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
             Invest in student climate leadership.
           </h1>
           <p className="text-base text-slate-700">
@@ -44,7 +44,7 @@ export default function DonatePage() {
       <section className="page-container stack stack-relaxed">
         <ScrollReveal variant="fade-up">
           <div className="stack stack-dense text-left">
-            <h2 className="text-3xl font-semibold text-slate-900">
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
               Donate now
             </h2>
             <p className="text-base text-slate-600">
@@ -69,7 +69,7 @@ export default function DonatePage() {
       <section className="page-container stack stack-relaxed">
         <ScrollReveal variant="fade-up">
           <div className="stack stack-dense text-left">
-            <h2 className="text-3xl font-semibold text-slate-900">
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
               Ways to give
             </h2>
           </div>

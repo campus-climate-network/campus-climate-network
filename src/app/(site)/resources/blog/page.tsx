@@ -31,10 +31,10 @@ export default async function Page() {
       <section className="bg-brand-primary/10 section-hero">
         <div className="page-container text-brand-primary">
           <div className="stack stack-tight max-w-3xl">
-            <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
               Latest Stories
             </p>
-            <h1 className="text-4xl font-semibold text-brand-primary">
+            <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
               Campus Climate Network Journal
             </h1>
             <p className="text-base text-brand-primary/80">
@@ -48,7 +48,7 @@ export default async function Page() {
       <section className="page-container stack stack-relaxed text-left">
         <ScrollReveal variant="fade-up">
           <header className="stack stack-compact">
-            <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
               From the Network
             </p>
             <p className="text-base text-slate-600">

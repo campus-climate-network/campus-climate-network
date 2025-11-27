@@ -97,10 +97,10 @@ export default function FFRCampaignPage() {
     <div className="page-wrapper">
       <section className="bg-brand-tertiary/10 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
             Fossil Free Research
           </p>
-          <h1 className="text-4xl font-semibold text-brand-primary">
+          <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
             Cut fossil fuel money out of university research.
           </h1>
           <p className="text-base text-slate-700">
@@ -117,7 +117,7 @@ export default function FFRCampaignPage() {
       <section className="page-container stack stack-relaxed">
         <ScrollReveal variant="fade-up">
           <div className="stack stack-dense text-left">
-            <h2 className="text-3xl font-semibold text-slate-900">
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
               Decades of deception
             </h2>
             <p className="text-base text-slate-600">
@@ -135,7 +135,7 @@ export default function FFRCampaignPage() {
       <section className="page-container stack stack-relaxed">
         <ScrollReveal variant="fade-up">
           <div className="stack stack-dense text-left">
-            <h2 className="text-3xl font-semibold text-slate-900">
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
               Why Fossil Free Research matters
             </h2>
             <p className="text-base text-slate-600">
@@ -150,7 +150,7 @@ export default function FFRCampaignPage() {
         <StaggerReveal
           staggerDelay={80}
           variant="blossom"
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-4 sm:gap-6 sm:grid-cols-2 xl:grid-cols-4"
         >
           {talkingPoints.map((point) => (
             <div
@@ -174,7 +174,7 @@ export default function FFRCampaignPage() {
       <section className="page-container stack stack-relaxed">
         <ScrollReveal variant="fade-up">
           <div className="stack stack-dense text-left">
-            <h2 className="text-3xl font-semibold text-slate-900">
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
               What we&apos;ve already exposed
             </h2>
             <p className="text-base text-slate-600">
@@ -192,7 +192,7 @@ export default function FFRCampaignPage() {
         <div className="page-container stack text-left text-white">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-dense">
-              <h2 className="text-3xl font-semibold">How we organize</h2>
+              <h2 className="text-2xl font-semibold sm:text-3xl">How we organize</h2>
               <p className="text-sm text-slate-200">
                 Students are escalating from research audits to mass
                 mobilizations.
@@ -215,7 +215,7 @@ export default function FFRCampaignPage() {
 
       <section className="page-container stack stack-tight text-left">
         <ScrollReveal variant="fade-up">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
             Plug into the campaign
           </h2>
           <p className="mt-4 text-base text-slate-600">

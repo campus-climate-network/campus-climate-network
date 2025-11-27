@@ -96,10 +96,10 @@ export default function OurNetworkPage() {
     <div className="page-wrapper">
       <section className="bg-brand-secondary/10 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
             Member Organizations
           </p>
-          <h1 className="text-4xl font-semibold text-brand-primary">
+          <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
             A national coalition of students fighting for fossil-free futures.
           </h1>
           <p className="text-base text-slate-700">
@@ -136,7 +136,7 @@ export default function OurNetworkPage() {
       <section className="page-container stack stack-relaxed">
         <ScrollReveal variant="fade-up">
           <div className="stack stack-dense text-left">
-            <h2 className="text-3xl font-semibold text-slate-900">
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
               Who&apos;s in the network
             </h2>
             <p className="text-base text-slate-600">
@@ -191,7 +191,7 @@ export default function OurNetworkPage() {
         <div className="page-container stack text-left text-white">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-dense">
-              <h2 className="text-3xl font-semibold">Membership benefits</h2>
+              <h2 className="text-2xl font-semibold sm:text-3xl">Membership benefits</h2>
               <p className="text-sm text-slate-200">
                 Tools and support to help campus organizers win faster.
               </p>
@@ -232,7 +232,7 @@ export default function OurNetworkPage() {
 
       <section className="page-container stack stack-dense text-left">
         <ScrollReveal variant="fade-up">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
             Join the network
           </h2>
           <p className="mt-4 text-base text-slate-600">

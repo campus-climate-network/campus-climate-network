@@ -60,10 +60,10 @@ export default function ResourcesPage() {
     <div className="page-wrapper">
       <section className="bg-brand-primary/10 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
             Resources
           </p>
-          <h1 className="text-4xl font-semibold text-brand-primary">
+          <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
             Tools and stories for student climate organizers.
           </h1>
           <p className="text-base text-slate-700">
@@ -122,7 +122,7 @@ export default function ResourcesPage() {
       <section className="bg-slate-900 section-dark">
         <div className="page-container stack stack-tight text-left text-white">
           <ScrollReveal variant="fade-up">
-            <h2 className="text-3xl font-semibold">Need something specific?</h2>
+            <h2 className="text-2xl font-semibold sm:text-3xl">Need something specific?</h2>
             <p className="mt-4 text-sm text-slate-200">
               We&apos;re always building new resources based on what organizers
               need. Reach out and let us know how we can support your campaign.

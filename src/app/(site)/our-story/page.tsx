@@ -47,10 +47,10 @@ export default function OurStoryPage() {
     <div className="page-wrapper">
       <section className="bg-brand-primary/10 section-hero">
         <div className="page-container stack stack-tight max-w-3xl">
-          <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
             Our Story
           </p>
-          <h1 className="text-4xl font-semibold text-brand-primary">
+          <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
             Students have always changed what&apos;s possible.
           </h1>
           <p className="text-base text-slate-700">
@@ -66,7 +66,7 @@ export default function OurStoryPage() {
       <section className="page-container stack stack-loose">
         <ScrollReveal variant="fade-up">
           <div className="stack stack-dense text-left">
-            <h2 className="text-3xl font-semibold text-slate-900">
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
               How we got here
             </h2>
             <p className="text-base text-slate-600">
@@ -99,7 +99,7 @@ export default function OurStoryPage() {
         <div className="page-container stack text-left text-white">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-dense">
-              <h2 className="text-3xl font-semibold">Our pillars</h2>
+              <h2 className="text-2xl font-semibold sm:text-3xl">Our pillars</h2>
               <p className="text-sm text-slate-200">
                 The student climate movement wins when we care for our people
                 and fight together.
@@ -130,7 +130,7 @@ export default function OurStoryPage() {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-cozy">
-              <h2 className="text-3xl font-semibold text-slate-900">
+              <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
                 What&apos;s next
               </h2>
               <p className="text-base text-slate-600">

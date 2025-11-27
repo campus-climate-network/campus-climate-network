@@ -44,11 +44,11 @@ export default function OurApproachPage() {
       <section className="bg-brand-cream/60 section-hero">
         <div className="page-container flex flex-col gap-10 lg:flex-row lg:items-center">
           <div className="flex-1 stack stack-tight">
-            <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
               Our Approach
             </p>
-            <h1 className="text-4xl font-semibold text-brand-primary">
-              We’re organizing the next generation of climate justice leaders.
+            <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
+              We&apos;re organizing the next generation of climate justice leaders.
             </h1>
             <p className="text-base text-slate-700">
               Campus Climate Network empowers students to challenge fossil fuel
@@ -73,7 +73,7 @@ export default function OurApproachPage() {
       <section className="page-container stack stack-relaxed">
         <ScrollReveal variant="fade-up">
           <div className="stack stack-dense">
-            <h2 className="text-3xl font-semibold text-slate-900">
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
               Vision & mission
             </h2>
           </div>
@@ -111,7 +111,7 @@ export default function OurApproachPage() {
         <div className="page-container stack stack-tight text-white">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-dense">
-              <h2 className="text-3xl font-semibold">What we&apos;re up against</h2>
+              <h2 className="text-2xl font-semibold sm:text-3xl">What we&apos;re up against</h2>
               <p className="text-sm text-slate-200">
                 We&apos;re honest about the landscape so we can strategize to win.
               </p>
@@ -141,7 +141,7 @@ export default function OurApproachPage() {
         <div className="page-container stack stack-tight">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-dense">
-              <h2 className="text-3xl font-semibold text-brand-primary">
+              <h2 className="text-2xl font-semibold text-brand-primary sm:text-3xl">
                 How we unite
               </h2>
               <p className="text-base text-slate-600">

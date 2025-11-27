@@ -29,10 +29,10 @@ export default function TakeActionPage() {
     <div className="page-wrapper">
       <section className="bg-brand-cream/60 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
             Take Action
           </p>
-          <h1 className="text-4xl font-semibold text-brand-primary">
+          <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
             Join Campus Climate Network.
           </h1>
           <p className="text-base text-slate-700">
@@ -47,7 +47,7 @@ export default function TakeActionPage() {
       <section className="page-container stack stack-relaxed">
         <ScrollReveal variant="fade-up">
           <div className="text-left">
-            <h2 className="text-3xl font-semibold text-slate-900">
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
               How onboarding works
             </h2>
           </div>
@@ -83,8 +83,8 @@ export default function TakeActionPage() {
 
       <section className="page-container">
         <ScrollReveal variant="blossom">
-          <div className="stack stack-dense rounded-3xl bg-brand-primary/10 p-8">
-            <h2 className="text-3xl font-semibold text-brand-primary">
+          <div className="stack stack-dense rounded-3xl bg-brand-primary/10 p-6 sm:p-8">
+            <h2 className="text-2xl font-semibold text-brand-primary sm:text-3xl">
               Upcoming opportunities
             </h2>
             <ul className="stack-list-snug text-sm text-slate-700">

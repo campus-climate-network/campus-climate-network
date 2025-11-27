@@ -100,13 +100,13 @@ export default function Home() {
       <section className="relative isolate overflow-hidden bg-gradient-to-br from-brand-secondary via-brand-tertiary to-brand-primary text-white">
         <div className="page-container section-hero grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div className="stack stack-tight">
-            <p className="text-sm uppercase tracking-[0.3em] text-brand-cream/70">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-cream/70">
               Campus Climate Network
             </p>
-            <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
+            <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
               The student climate movement is here.
             </h1>
-            <p className="text-lg text-brand-cream/90">
+            <p className="text-base sm:text-lg text-brand-cream/90">
               We provide students with the skills, resources, and connections
               you need to run winning campaigns on campus.
             </p>
@@ -154,7 +154,7 @@ export default function Home() {
           </div>
         </div>
         <div className="border-t border-white/15 bg-white/5">
-          <div className="page-container flex flex-wrap items-center justify-center gap-6 py-6 text-sm uppercase tracking-[0.3em] text-brand-cream/70">
+          <div className="page-container grid grid-cols-2 gap-3 py-6 text-sm uppercase tracking-[0.3em] text-brand-cream/70 sm:grid-cols-3 md:flex md:flex-wrap md:items-center md:justify-center md:gap-6">
             {pressLogos.map((logo) => {
               const content = (
                 <div className="flex h-full w-full items-center justify-center">
@@ -164,7 +164,7 @@ export default function Home() {
                     width={logo.width}
                     height={logo.height}
                     className="max-h-full max-w-full object-contain"
-                    sizes="160px"
+                    sizes="(max-width: 768px) 140px, 160px"
                   />
                 </div>
               )
@@ -174,14 +174,14 @@ export default function Home() {
                   href={logo.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-20 w-40 items-center justify-center rounded-xl bg-brand-cream/70 px-4 py-3 shadow-sm transition hover:bg-brand-cream hover:shadow-md"
+                  className="flex h-16 items-center justify-center rounded-xl bg-brand-cream/70 px-3 py-2 shadow-sm transition hover:bg-brand-cream hover:shadow-md sm:h-20 md:w-40 md:px-4 md:py-3"
                 >
                   {content}
                 </a>
               ) : (
                 <div
                   key={logo.name}
-                  className="flex h-20 w-40 items-center justify-center rounded-xl bg-brand-cream/70 px-4 py-3 shadow-sm"
+                  className="flex h-16 items-center justify-center rounded-xl bg-brand-cream/70 px-3 py-2 shadow-sm sm:h-20 md:w-40 md:px-4 md:py-3"
                 >
                   {content}
                 </div>
@@ -195,14 +195,14 @@ export default function Home() {
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-cozy">
-              <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+              <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
                 Our Network
               </p>
-              <h2 className="text-3xl font-semibold text-slate-900">
+              <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
                 Around the world, students just like you are kicking Big Oil off
                 campus.
               </h2>
-              <p className="text-lg text-slate-600">
+              <p className="text-base text-slate-600 sm:text-lg">
                 Our members share organizing playbooks, tactical trainings, and
                 cross-campus solidarity so every institution can move faster
                 toward fossil-free research.
@@ -244,7 +244,7 @@ export default function Home() {
       <section className="bg-brand-cream/40 section-hero">
         <div className="page-container stack stack-relaxed text-left">
           <ScrollReveal variant="fade-up">
-              <h2 className="text-3xl font-semibold text-slate-900">
+              <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
                 What we do
               </h2>
           </ScrollReveal>
@@ -290,7 +290,7 @@ export default function Home() {
       <section className="page-container">
         <div className="stack stack-mid text-left">
           <ScrollReveal variant="fade-up">
-              <h2 className="text-3xl font-semibold text-slate-900">
+              <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
                 What&apos;s next?
               </h2>
           </ScrollReveal>
@@ -329,10 +329,10 @@ export default function Home() {
       <section className="page-container">
         <div className="stack stack-mid text-left">
           <ScrollReveal variant="fade-up">
-            <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
               We are the movement
             </p>
-            <h2 className="mt-2 text-3xl font-semibold text-slate-900">
+            <h2 className="mt-2 text-2xl font-semibold text-slate-900 sm:text-3xl">
               Scenes from campuses taking bold climate action
             </h2>
           </ScrollReveal>

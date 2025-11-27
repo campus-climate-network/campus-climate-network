@@ -191,7 +191,7 @@ export default async function PostPage(
     null
 
   return (
-    <main className="mx-auto grid max-w-3xl gap-8 px-[var(--spacing-container)] section-hero">
+    <main className="mx-auto grid max-w-3xl gap-6 px-[var(--spacing-container)] section-hero sm:gap-8">
       <Link
         href="/resources/blog"
         className="inline-flex items-center gap-1 text-sm font-medium text-brand-primary transition hover:text-brand-secondary"
@@ -209,7 +209,7 @@ export default async function PostPage(
                   })
                 : 'Unpublished'}
             </p>
-            <h1 className="text-4xl font-semibold leading-tight text-slate-900">
+            <h1 className="text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">
               {post.title}
             </h1>
           </div>

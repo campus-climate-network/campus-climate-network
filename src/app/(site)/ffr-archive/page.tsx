@@ -48,14 +48,14 @@ export default function FfrReportsPage() {
   return (
     <main className="min-h-screen bg-stone-950">
       {/* Hero */}
-      <section className="relative py-24 md:py-32">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="relative py-16 md:py-24 lg:py-32">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-tight">
-              <p className="text-sm uppercase tracking-[0.3em] text-stone-400">
+              <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-stone-400">
                 Fossil Free Research
               </p>
-              <h1 className="text-4xl font-semibold text-white">
+              <h1 className="text-3xl font-semibold text-white sm:text-4xl">
                 FFR Reports
               </h1>
               <p className="max-w-2xl text-base text-stone-300">
@@ -68,8 +68,8 @@ export default function FfrReportsPage() {
       </section>
 
       {/* Reports Grid */}
-      <section className="pb-24 md:pb-32">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="pb-16 md:pb-24 lg:pb-32">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <StaggerReveal
             staggerDelay={100}
             variant="blossom"

@@ -34,10 +34,10 @@ const footerColumns = navEntries.flatMap(extractFooterColumns)
 export function SiteFooter() {
   return (
     <footer className="bg-slate-900 text-slate-100">
-      <div className="page-container section-dark grid gap-12 lg:grid-cols-[2fr_3fr]">
+      <div className="page-container section-dark grid gap-10 md:gap-12 lg:grid-cols-[2fr_3fr]">
         <div className="stack stack-tight">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.65em] text-brand-accent">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.5em] text-brand-accent sm:text-xs sm:tracking-[0.65em]">
               Campus Climate Network
             </p>
             <p className="mt-3 max-w-xs text-sm text-slate-300">
@@ -70,13 +70,13 @@ export function SiteFooter() {
             © Campus Climate Network {new Date().getFullYear()}
           </p>
         </div>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-3 lg:grid-cols-3">
           {footerColumns.map((column) => (
             <div key={column.title}>
-              <h3 className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-accent">
+              <h3 className="text-[10px] font-semibold uppercase tracking-[0.25em] text-brand-accent sm:text-xs sm:tracking-[0.35em]">
                 {column.title}
               </h3>
-              <ul className="stack-list-compact mt-4 text-sm text-slate-300">
+              <ul className="stack-list-compact mt-3 text-sm text-slate-300 sm:mt-4">
                 {column.links.map((link) => (
                   <li key={link.href}>
                     <Link

@@ -99,10 +99,10 @@ export default function OpenLetterPage() {
     <div className="page-wrapper">
       <section className="bg-brand-primary/10 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-sm uppercase tracking-[0.3em] text-brand-secondary">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
             Open Letter
           </p>
-          <h1 className="text-4xl font-semibold text-brand-primary">
+          <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
             End fossil fuel influence on campus research.
           </h1>
           <p className="text-base text-slate-700">
@@ -116,7 +116,7 @@ export default function OpenLetterPage() {
 
       <section className="page-container stack stack-tight text-left">
         <ScrollReveal variant="fade-up">
-          <h2 className="text-3xl font-semibold text-slate-900">The letter</h2>
+          <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">The letter</h2>
         </ScrollReveal>
         <ScrollReveal variant="fade" delay={100}>
           <div className="stack text-base text-slate-700">
@@ -251,7 +251,7 @@ export default function OpenLetterPage() {
       <section className="page-container stack">
         <ScrollReveal variant="fade-up">
           <div className="stack stack-dense text-left">
-            <h2 className="text-3xl font-semibold text-slate-900">
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
               Why sign on?
             </h2>
             <p className="text-base text-slate-600">
@@ -289,7 +289,7 @@ export default function OpenLetterPage() {
         <div className="page-container stack text-left text-white">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-dense">
-              <h2 className="text-3xl font-semibold">Who has signed so far</h2>
+              <h2 className="text-2xl font-semibold sm:text-3xl">Who has signed so far</h2>
               <p className="text-sm text-slate-200">
                 Thousands of supporters have endorsed the letter, representing
                 campuses and movements around the world.
@@ -299,7 +299,7 @@ export default function OpenLetterPage() {
           <StaggerReveal
             staggerDelay={80}
             variant="blossom"
-            className="grid gap-4 text-sm text-slate-100 md:grid-cols-4"
+            className="grid grid-cols-2 gap-3 text-sm text-slate-100 sm:gap-4 lg:grid-cols-4"
           >
             {supporters.map((group) => (
               <div
@@ -315,7 +315,7 @@ export default function OpenLetterPage() {
 
       <section className="page-container stack stack-tight text-left">
         <ScrollReveal variant="fade-up">
-          <h2 className="text-3xl font-semibold text-slate-900">Add your name</h2>
+          <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">Add your name</h2>
           <p className="mt-4 text-base text-slate-600">
             We&apos;re finalizing the new signatory form. In the meantime, contact us
             and we&apos;ll keep you updated about the next release of signatures.
