@@ -317,8 +317,8 @@ export default function OpenLetterPage() {
         <ScrollReveal variant="fade-up">
           <h2 className="text-3xl font-semibold text-slate-900">Add your name</h2>
           <p className="mt-4 text-base text-slate-600">
-            We're finalizing the new signatory form. In the meantime, contact us
-            and we'll keep you updated about the next release of signatures.
+            We&apos;re finalizing the new signatory form. In the meantime, contact us
+            and we&apos;ll keep you updated about the next release of signatures.
           </p>
           <div className="mt-4 flex flex-wrap gap-4">
             <a

@@ -82,7 +82,7 @@ export default function ContactUsPage() {
             <h2 className="text-3xl font-semibold">Stay in the loop</h2>
             <p className="mt-4 text-sm text-slate-200">
               Newsletter signups and text alerts are coming soon. Email us now and
-              we'll make sure you receive the first announcement.
+              we&apos;ll make sure you receive the first announcement.
             </p>
           </ScrollReveal>
         </div>
