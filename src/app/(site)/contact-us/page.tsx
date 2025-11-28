@@ -61,7 +61,7 @@ export default function ContactUsPage() {
               >
                 Take Action
               </Link>{' '}
-              or email us to receive the latest intake form.
+              or email us.
             </p>
           </div>
           <div className="stack stack-dense rounded-3xl border border-brand-secondary/20 bg-white p-6 shadow-sm">
