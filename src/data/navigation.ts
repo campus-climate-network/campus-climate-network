@@ -90,7 +90,7 @@ export const navEntries: NavEntry[] = [
     label: 'Fossil Free Research',
     columns: [
       {
-        title: 'Overview',
+        title: 'FFR Overview',
         items: [
           {
             label: 'FFR Campaign',
