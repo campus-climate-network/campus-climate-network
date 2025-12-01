@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const resourceSections = [
   {
-    title: 'Resource Library',
+    title: 'Resource library',
     description:
       'Toolkits, training decks, and campaign templates to help you run winning climate justice campaigns on your campus.',
     href: '/resources/library',
@@ -60,7 +60,7 @@ export default function ResourcesPage() {
     <div className="page-wrapper">
       <section className="bg-brand-primary/10 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
+          <p className="eyebrow text-xs sm:text-sm text-brand-secondary">
             Resources
           </p>
           <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
@@ -131,7 +131,7 @@ export default function ResourcesPage() {
               className="mt-4 inline-flex items-center self-start rounded-full bg-brand-accent px-5 py-2 text-sm font-semibold text-slate-900 transition hover:bg-yellow-300"
               href="mailto:info@campusclimatenetwork.org"
             >
-              Request a Resource
+              Request a resource
             </a>
           </ScrollReveal>
         </div>

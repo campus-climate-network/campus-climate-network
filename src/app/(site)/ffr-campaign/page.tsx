@@ -95,7 +95,7 @@ export default function FFRCampaignPage() {
     <div className="page-wrapper">
       <section className="bg-brand-tertiary/10 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
+          <p className="eyebrow text-xs sm:text-sm text-brand-secondary">
             Fossil Free Research
           </p>
           <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
@@ -186,7 +186,7 @@ export default function FFRCampaignPage() {
               href="/ffr-archive"
               className="mt-4 inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary w-fit"
             >
-              View FFR Reports
+              View FFR reports
             </Link>
           </div>
         </ScrollReveal>

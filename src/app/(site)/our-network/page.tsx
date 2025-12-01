@@ -96,8 +96,8 @@ export default function OurNetworkPage() {
     <div className="page-wrapper">
       <section className="bg-brand-secondary/10 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
-            Member Organizations
+          <p className="eyebrow text-xs sm:text-sm text-brand-secondary">
+            Member organizations
           </p>
           <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
             A national coalition of students fighting for fossil-free futures.
@@ -128,7 +128,7 @@ export default function OurNetworkPage() {
             className="inline-flex items-center self-start rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
             href="/take-action"
           >
-            Join Us
+            Join us
           </Link>
         </div>
       </section>
@@ -204,15 +204,15 @@ export default function OurNetworkPage() {
           >
             {[
               {
-                title: 'Organizing Playbooks',
+                title: 'Organizing playbooks',
                 body: 'Campaign templates, research briefs, and rapid-response messaging that students can adapt for their campuses.',
               },
               {
-                title: 'Training & Gatherings',
+                title: 'Training & gatherings',
                 body: 'College Climate Gatherings, monthly skillshares, and mentorship that connect organizers across regions.',
               },
               {
-                title: 'Mini-grants & Partnerships',
+                title: 'Mini-grants & partnerships',
                 body: 'Funding, communications support, and national amplification to scale bold campus campaigns.',
               },
             ].map((item) => (
@@ -245,13 +245,13 @@ export default function OurNetworkPage() {
               className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
               href="/take-action"
             >
-              Apply for Membership
+              Apply for membership
             </Link>
             <a
               className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
               href="mailto:info@campusclimatenetwork.org"
             >
-              Ask a Question
+              Ask a question
             </a>
           </div>
         </ScrollReveal>

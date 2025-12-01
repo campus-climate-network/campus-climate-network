@@ -211,8 +211,8 @@ export default function OpenLetterPage() {
     <div className="page-wrapper !pb-0">
       <section className="bg-brand-primary/10 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
-            Open Letter
+          <p className="eyebrow text-xs sm:text-sm text-brand-secondary">
+            Open letter
           </p>
           <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
             End fossil fuel influence on campus research.

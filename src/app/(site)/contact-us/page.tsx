@@ -13,7 +13,7 @@ export default function ContactUsPage() {
     <div className="page-wrapper">
       <section className="bg-brand-cream/60 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
+          <p className="eyebrow text-xs sm:text-sm text-brand-secondary">
             Contact
           </p>
           <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">

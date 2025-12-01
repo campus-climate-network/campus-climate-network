@@ -44,8 +44,8 @@ export default function OurApproachPage() {
       <section className="bg-brand-cream/60 section-hero">
         <div className="page-container flex flex-col gap-10 lg:flex-row lg:items-center">
           <div className="flex-1 stack stack-tight">
-            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
-              Our Approach
+            <p className="eyebrow text-xs sm:text-sm text-brand-secondary">
+              Our approach
             </p>
             <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
               We&apos;re organizing the next generation of climate justice

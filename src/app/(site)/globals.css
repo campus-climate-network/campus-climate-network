@@ -59,6 +59,13 @@ body {
 
 h1 {
   font-family: var(--font-bungee);
+  text-transform: uppercase;
+}
+
+/* Eyebrow text - small uppercase label above headings */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
 }
 
 /* Stack utilities for consistent vertical spacing */

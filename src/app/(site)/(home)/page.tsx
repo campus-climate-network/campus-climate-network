@@ -95,7 +95,7 @@ export default function Home() {
       <section className="relative isolate overflow-hidden bg-gradient-to-br from-brand-secondary via-brand-tertiary to-brand-primary text-white">
         <div className="page-container section-hero grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div className="stack stack-tight">
-            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-cream/70">
+            <p className="eyebrow text-xs sm:text-sm text-brand-cream/70">
               Campus Climate Network
             </p>
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
@@ -110,7 +110,7 @@ export default function Home() {
                 className="inline-flex items-center rounded-full bg-brand-accent px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-lg transition hover:bg-yellow-300"
                 href="/take-action"
               >
-                Join Us
+                Join us
               </Link>
               <Link
                 className="inline-flex items-center rounded-full border border-white/50 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white hover:text-brand-primary"
@@ -155,7 +155,7 @@ export default function Home() {
         </div>
         <div className="border-t border-white/15 bg-white/5">
           <div className="page-container py-6">
-            <p className="mb-4 text-xs uppercase tracking-[0.3em] text-brand-cream/60">
+            <p className="eyebrow text-xs text-brand-cream/60 mb-4">
               Featured in
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm uppercase tracking-[0.3em] text-brand-cream/70 sm:grid-cols-3 md:flex md:flex-wrap md:items-center md:justify-center md:gap-6">
@@ -200,8 +200,8 @@ export default function Home() {
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-cozy">
-              <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
-                Our Network
+              <p className="eyebrow text-xs sm:text-sm text-brand-secondary">
+                Our network
               </p>
               <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
                 Around the world, students just like you are kicking Big Oil off
@@ -217,7 +217,7 @@ export default function Home() {
                   className="inline-flex items-center rounded-full bg-brand-primary px-4 py-2 text-white transition hover:bg-brand-secondary"
                   href="/our-network"
                 >
-                  Member Organizations
+                  Member organizations
                 </Link>
                 <Link
                   className="inline-flex items-center rounded-full border border-brand-primary px-4 py-2 text-brand-primary transition hover:bg-brand-primary hover:text-white"
@@ -313,7 +313,7 @@ export default function Home() {
                 className="mt-6 inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
                 href="/take-action"
               >
-                Join Us
+                Join us
               </Link>
             </div>
             <div className="rounded-3xl bg-brand-secondary/10 p-8 text-brand-secondary">
@@ -334,7 +334,7 @@ export default function Home() {
       <section className="page-container">
         <div className="stack stack-mid text-left">
           <ScrollReveal variant="fade-up">
-            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
+            <p className="eyebrow text-xs sm:text-sm text-brand-secondary">
               We are the movement
             </p>
             <h2 className="mt-2 text-2xl font-semibold text-slate-900 sm:text-3xl">

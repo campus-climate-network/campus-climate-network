@@ -38,8 +38,8 @@ export default async function Page() {
       <section className="bg-brand-primary/10 section-hero">
         <div className="page-container text-brand-primary">
           <div className="stack stack-tight max-w-3xl">
-            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
-              Latest Stories
+            <p className="eyebrow text-xs sm:text-sm text-brand-secondary">
+              Latest stories
             </p>
             <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
               Campus Climate Network Journal

@@ -52,7 +52,7 @@ export default function FfrReportsPage() {
         <div className="page-container">
           <ScrollReveal variant="fade-up">
             <div className="stack stack-tight">
-              <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-stone-400">
+              <p className="eyebrow text-xs sm:text-sm text-stone-400">
                 Fossil Free Research
               </p>
               <h1 className="text-3xl font-semibold text-white sm:text-4xl">

@@ -33,8 +33,8 @@ export default function OurFundersPage() {
     <div className="page-wrapper">
       <section className="bg-brand-cream/60 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
-            Our Funders
+          <p className="eyebrow text-xs sm:text-sm text-brand-secondary">
+            Our funders
           </p>
           <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
             Resourcing student power for climate justice.
@@ -102,15 +102,15 @@ export default function OurFundersPage() {
           >
             {[
               {
-                title: 'Student Fellowships',
+                title: 'Student fellowships',
                 body: 'Stipends, fellowships, and project grants that allow organizers to focus on campaigns without sacrificing financial stability.',
               },
               {
-                title: 'Trainings & Gatherings',
+                title: 'Trainings & gatherings',
                 body: 'Regional College Climate Gatherings, onboarding cohorts, and targeted skill-building sessions for member organizations.',
               },
               {
-                title: 'Campaign Partnerships',
+                title: 'Campaign partnerships',
                 body: 'Rapid-response mini-grants, communications support, and national coordination for strategic campus actions.',
               },
             ].map((item) => (
@@ -144,13 +144,13 @@ export default function OurFundersPage() {
               className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
               href="/contact-us"
             >
-              Contact Us
+              Contact us
             </Link>
             <Link
               className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
               href="/donate"
             >
-              Give Online
+              Give online
             </Link>
           </div>
         </ScrollReveal>

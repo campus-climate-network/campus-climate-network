@@ -224,7 +224,7 @@ function MegaPanelColumns({
     >
       {menu.columns.map((column) => (
         <div key={`${menu.label}-${column.title}`} className="stack stack-snug">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-secondary/90">
+          <p className="eyebrow text-xs font-semibold text-brand-secondary/90">
             {column.title}
           </p>
           <ul className="stack-list-compact">
@@ -840,7 +840,7 @@ function MobileMenuSection({
               key={`${menu.label}-${column.title}`}
               className="stack stack-compact"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-secondary/80">
+              <p className="eyebrow text-xs font-semibold text-brand-secondary/80">
                 {column.title}
               </p>
               <div className="stack stack-compact">
@@ -916,7 +916,7 @@ function MobileNav({
         )}
       >
         <div className="flex items-center justify-between border-b border-slate-200 px-6 py-5">
-          <span className="text-xs font-semibold uppercase tracking-[0.4em] text-brand-secondary">
+          <span className="eyebrow text-xs font-semibold tracking-[0.4em] text-brand-secondary">
             Menu
           </span>
           <button
@@ -1076,7 +1076,7 @@ export function SiteHeader() {
               href="/take-action"
               className="inline-flex items-center rounded-full bg-brand-primary px-4 py-2 text-sm font-semibold text-white shadow-[0_16px_40px_-20px_rgba(96,55,157,0.8)] transition hover:bg-brand-secondary"
             >
-              Take Action
+              Take action
             </Link>
           </div>
         </div>

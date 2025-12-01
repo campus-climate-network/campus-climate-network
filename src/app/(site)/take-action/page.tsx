@@ -29,8 +29,8 @@ export default function TakeActionPage() {
     <div className="page-wrapper !pb-0">
       <section className="bg-brand-cream/60 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
-            Take Action
+          <p className="eyebrow text-xs sm:text-sm text-brand-secondary">
+            Take action
           </p>
           <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
             Join Campus Climate Network.

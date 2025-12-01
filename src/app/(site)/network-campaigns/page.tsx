@@ -15,22 +15,22 @@ const campaignHighlights = [
       "For decades, the fossil fuel industry has sought to mislead the public on the realities of climate change and obstruct climate action. Fossil fuel funded research provides Big Oil with undue legitimacy, bolsters industry greenwashing, and skews the research we need to inform a just energy transition. It's time to end fossil fuel-funded research at our schools.",
   },
   {
-    title: 'Campus Decarbonization',
+    title: 'Campus decarbonization',
     description:
       'Universities cannot be true climate leaders while continuing to rely on oil and gas for energy. We are fighting back against performative carbon neutrality plans that lack transparency and rely on greenwashing solutions such as carbon offsets. We demand genuine campus decarbonization.',
   },
   {
-    title: 'Green New Deal for Campuses',
+    title: 'Green New Deal for campuses',
     description:
       "To achieve a just energy transition, we will have to change everything. Let's start with our universities.",
   },
   {
-    title: 'Fossil Free Careers',
+    title: 'Fossil free careers',
     description:
       'We envision a future with just, green, good jobs for all. Fossil fuel industry recruitment on our campuses must stop.',
   },
   {
-    title: 'Fossil Fuel Divestment',
+    title: 'Fossil fuel divestment',
     description:
       'Our planet is burning and our schools are investing in the fire. Our endowments must not be used to fuel the climate crisis.',
   },
@@ -41,7 +41,7 @@ export default function NetworkCampaignsPage() {
     <div className="page-wrapper">
       <section className="bg-brand-primary/10 section-hero">
         <div className="page-container stack stack-tight text-left">
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
+          <p className="eyebrow text-xs sm:text-sm text-brand-secondary">
             Campaigns
           </p>
           <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
@@ -106,15 +106,15 @@ export default function NetworkCampaignsPage() {
           >
             {[
               {
-                title: 'Strategy Labs',
+                title: 'Strategy labs',
                 body: 'Monthly campaign labs and peer coaching to refine demands, escalation plans, and power maps.',
               },
               {
-                title: 'Messaging & Media',
+                title: 'Messaging & media',
                 body: "Shared talking points, media trainings, and amplification through CCN's communications channels.",
               },
               {
-                title: 'Rapid-Response Support',
+                title: 'Rapid-response support',
                 body: 'Mini-grants and mobilization infrastructure for actions, digital storms, and high-impact escalations.',
               },
             ].map((item) => (
@@ -146,13 +146,13 @@ export default function NetworkCampaignsPage() {
               className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
               href="/take-action"
             >
-              Join Coordination Calls
+              Join coordination calls
             </Link>
             <a
               className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
               href="mailto:info@campusclimatenetwork.org"
             >
-              Submit an Update
+              Submit an update
             </a>
           </div>
         </ScrollReveal>

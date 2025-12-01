@@ -12,43 +12,43 @@ export const metadata: Metadata = {
 const timelineEvents = [
   {
     date: 'March 2022',
-    title: 'The Fossil Free Research Movement is Born',
+    title: 'The Fossil Free Research movement is born',
     description:
       'Fossil Free Research launches with the release of our open letter, which has been signed by 1,000 academics from around the world—including IPCC authors and Nobel Prize winners—calling for an end to fossil fuel funding for climate and energy research.',
   },
   {
     date: 'May 2022',
-    title: 'Our First Coordinated Action',
+    title: 'Our first coordinated action',
     description:
       'Student organizers from Oxford, Cambridge, and George Washington University stage the first coordinated action for Fossil Free Research. Following the action, organizers with Cambridge Climate Justice win their demand to rename the BP Institute at Cambridge.',
   },
   {
     date: 'March 2023',
-    title: 'Data For Progress Report Launch',
+    title: 'Data For Progress report launch',
     description:
       'Fossil Free Research, in collaboration with Data For Progress, released a first-of-its-kind report uncovering nearly $700 million in fossil fuel money across 27 US universities from 2010-2020. Due to a lack of transparency across institutions of higher education, this figure—while alarming—is likely a mere fraction of the true total.',
   },
   {
     date: 'March 2023',
-    title: 'A Historic Fossil Free Research Win',
+    title: 'A historic Fossil Free Research win',
     description:
       'VU Amsterdam announces the most comprehensive Fossil Free Research policy to date by committing to reject funding from any fossil fuel company whose business model is not demonstrably committed to the goals of the Paris Agreement in the short term. FFR works with students from VU Amsterdam to amplify the role of activism in reaching this decision and what it means for our movement.',
   },
   {
     date: 'August 2023',
-    title: 'An Academic and Oil Company Board Member Resigns',
+    title: 'An academic and oil company board member resigns',
     description:
       'Harvard environmental law professor Jody Freeman resigns from the ConocoPhillips Board. Momentum toward this decision was sparked by a Freedom of Information Act request (submitted by one of our coalition members) revealing that Freeman lobbied the Securities and Exchange Commission on behalf of Conoco, but only disclosed her ties to Harvard. Ensuring campus activism from CCN member group Fossil Fuel Divest Harvard, in collaboration with allied climate groups, soon resulted in Freeman\'s resignation from the Conoco board.',
   },
   {
     date: 'September 2023',
-    title: 'Panel Event and Climate March',
+    title: 'Panel event and climate march',
     description:
       'At New York Climate week, one of the first opportunities for student climate activists to convene in person since the pandemic, Fossil Free Research coordinates a panel event on the state of campus organizing attended by over 60 student organizers from the US and Canada. The next day, members of the coalition march for climate justice alongside 75,000 others in New York City.',
   },
   {
     date: 'October 2023',
-    title: 'FFR Becomes Campus Climate Network',
+    title: 'FFR becomes Campus Climate Network',
     description:
       'Fossil Free Research becomes the Campus Climate Network in an effort to build power among all campus campaigns demanding that their universities cut ties with the fossil fuel industry and its enablers.',
   },
@@ -60,8 +60,8 @@ export default function OurStoryPage() {
       {/* Hero Section */}
       <section className="bg-brand-primary/10 section-hero">
         <div className="page-container stack stack-tight max-w-3xl">
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand-secondary">
-            Our Story
+          <p className="eyebrow text-xs sm:text-sm text-brand-secondary">
+            Our story
           </p>
           <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
             How we got here
@@ -97,7 +97,7 @@ export default function OurStoryPage() {
                   href="/resources/blog"
                   className="inline-flex items-center rounded-full bg-brand-accent px-6 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-brand-accent/90"
                 >
-                  Visit Our Blog
+                  Visit our blog
                 </Link>
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function OurStoryPage() {
         <ScrollReveal variant="fade-up">
           <div className="stack stack-cozy max-w-2xl">
             <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-              Join the Movement
+              Join the movement
             </h2>
             <p className="text-base text-slate-600">
               Whether you&apos;re a student, academic, or supporter, there&apos;s
@@ -121,7 +121,7 @@ export default function OurStoryPage() {
                 className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-white transition hover:bg-brand-secondary"
                 href="/take-action"
               >
-                Take Action
+                Take action
               </Link>
               <Link
                 className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-brand-primary transition hover:bg-brand-primary hover:text-white"

@@ -23,41 +23,41 @@ export type NavEntry = NavMenu | NavPage
 
 export const navEntries: NavEntry[] = [
   {
-    label: 'About Us',
+    label: 'About us',
     columns: [
       {
         title: 'Inside CCN',
         items: [
           {
-            label: 'Our Approach',
+            label: 'Our approach',
             href: '/our-approach',
             description:
               'Strategy and support model for winning campus campaigns.',
           },
           {
-            label: 'Our Story',
+            label: 'Our story',
             href: '/our-story',
             description:
               'Where the network began and where we are heading next.',
           },
           {
-            label: 'Our Funders',
+            label: 'Our funders',
             href: '/our-funders',
             description: 'Partners investing in climate justice organizing.',
           },
         ],
       },
       {
-        title: 'Work With Us',
+        title: 'Work with us',
         items: [
           {
-            label: 'We’re Hiring',
+            label: "We're hiring",
             href: '/hiring',
             description:
               'Open roles for organizers, communicators, and builders.',
           },
           {
-            label: 'Contact Us',
+            label: 'Contact us',
             href: '/contact-us',
             description: 'Reach the CCN team for partnerships or press.',
           },
@@ -72,13 +72,13 @@ export const navEntries: NavEntry[] = [
         title: 'CCN Network',
         items: [
           {
-            label: 'Member Organizations',
+            label: 'Member organizations',
             href: '/our-network',
             description:
               'Explore the groups pushing universities to cut fossil ties.',
           },
           {
-            label: 'Network Campaigns',
+            label: 'Network campaigns',
             href: '/network-campaigns',
             description: 'Campaigns run by the CCN Network.',
           },
@@ -90,16 +90,16 @@ export const navEntries: NavEntry[] = [
     label: 'Fossil Free Research',
     columns: [
       {
-        title: 'FFR Overview',
+        title: 'FFR overview',
         items: [
           {
-            label: 'FFR Campaign',
+            label: 'FFR campaign',
             href: '/ffr-campaign',
             description:
               'End fossil fuel industry influence over academic research.',
           },
           {
-            label: 'Open Letter',
+            label: 'Open letter',
             href: '/open-letter',
             description:
               'Sign the call for universities to reject fossil fuel funding.',
@@ -110,7 +110,7 @@ export const navEntries: NavEntry[] = [
         title: 'Reports',
         items: [
           {
-            label: 'FFR Reports',
+            label: 'FFR reports',
             href: '/ffr-archive',
             description:
               'Research exposing fossil fuel ties to university programs.',
