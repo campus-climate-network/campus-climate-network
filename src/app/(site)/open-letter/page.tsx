@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal'
-import { OpenLetterForm } from '@/components/open-letter-form'
+// import { OpenLetterForm } from '@/components/open-letter-form'
 
 export const metadata: Metadata = {
   title: 'Open Letter',
