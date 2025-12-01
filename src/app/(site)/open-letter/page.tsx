@@ -463,13 +463,15 @@ export default function OpenLetterPage() {
               href="https://actionnetwork.org/widgets/v5/form/fossil-free-research-open-letter"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center rounded-full bg-brand-accent border-4 border-brand-accent px-16 py-6 text-2xl font-bold text-slate-900 shadow-2xl transition-all duration-300 ease-out hover:bg-slate-900 hover:text-brand-accent hover:scale-105 hover:shadow-slate-900/50 whitespace-nowrap"
+              className="group relative inline-flex items-center justify-center rounded-full bg-brand-accent border-4 border-brand-accent px-6 py-4 text-base sm:px-16 sm:py-6 sm:text-2xl font-bold text-slate-900 shadow-2xl transition-all duration-300 ease-out hover:bg-slate-900 hover:text-brand-accent hover:scale-105 hover:shadow-slate-900/50 sm:whitespace-nowrap text-center max-w-[calc(100vw-2rem)]"
             >
-              <span className="invisible">Down the fossil fuel industry!</span>
-              <span className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
+              <span className="invisible">
+                Down with the fossil fuel industry!
+              </span>
+              <span className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0 px-4">
                 Sign the letter
               </span>
-              <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 px-4">
                 Down with the fossil fuel industry!
               </span>
             </a>
