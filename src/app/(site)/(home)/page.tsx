@@ -44,10 +44,11 @@ const pressLogos = [
     href: 'https://www.bostonglobe.com/2025/02/18/science/mit-decarbonization-plan-saves-millions/',
   },
   {
-    name: 'The Independent',
-    image: '/press-logos/independent.png',
-    width: 376,
-    height: 30,
+    name: 'The Chronicle of Higher Education',
+    image: '/press-logos/chronicle-higher-education.png',
+    width: 896,
+    height: 228,
+    href: 'https://www.chronicle.com/article/big-oil-helped-shape-stanfords-latest-climate-research-focus',
   },
   {
     name: 'Mother Jones',
@@ -160,6 +161,7 @@ export default function Home() {
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm uppercase tracking-[0.3em] text-brand-cream/70 sm:grid-cols-3 md:flex md:flex-wrap md:items-center md:justify-center md:gap-6">
               {pressLogos.map((logo) => {
+                const scale = 'scale' in logo ? logo.scale : 1
                 const content = (
                   <div className="flex h-full w-full items-center justify-center">
                     <Image
@@ -169,6 +171,7 @@ export default function Home() {
                       height={logo.height}
                       className="max-h-full max-w-full object-contain"
                       sizes="(max-width: 768px) 140px, 160px"
+                      style={{ transform: `scale(${scale})` }}
                     />
                   </div>
                 )
@@ -275,10 +278,7 @@ export default function Home() {
                 body: "Our movement is stronger when we use our collective voice. We facilitate coordinated action so we can't be ignored.",
               },
             ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-3xl bg-white p-8"
-              >
+              <div key={item.title} className="rounded-3xl bg-white p-8">
                 <p className="text-sm font-semibold uppercase tracking-widest text-brand-secondary">
                   {item.title}
                 </p>
