@@ -194,9 +194,12 @@ h1 {
   transform: scale(1) translateY(0);
   filter: blur(0);
   transition:
-    opacity var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
-    transform var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
-    filter var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+    opacity var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1)
+      var(--reveal-delay, 0ms),
+    transform var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1)
+      var(--reveal-delay, 0ms),
+    filter var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1)
+      var(--reveal-delay, 0ms);
 }
 
 /* Fade up - simple upward motion with fade */
@@ -208,14 +211,17 @@ h1 {
   opacity: 1;
   transform: translateY(0);
   transition:
-    opacity var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
-    transform var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+    opacity var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1)
+      var(--reveal-delay, 0ms),
+    transform var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1)
+      var(--reveal-delay, 0ms);
 }
 
 /* Fade - opacity only */
 .scroll-reveal-fade.is-visible {
   opacity: 1;
-  transition: opacity var(--reveal-duration, 600ms) ease-out var(--reveal-delay, 0ms);
+  transition: opacity var(--reveal-duration, 600ms) ease-out
+    var(--reveal-delay, 0ms);
 }
 
 /* Scale - gentle scale up */
@@ -227,8 +233,10 @@ h1 {
   opacity: 1;
   transform: scale(1);
   transition:
-    opacity var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
-    transform var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+    opacity var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1)
+      var(--reveal-delay, 0ms),
+    transform var(--reveal-duration, 600ms) cubic-bezier(0.22, 1, 0.36, 1)
+      var(--reveal-delay, 0ms);
 }
 
 /* Respect reduced motion preferences */
@@ -379,7 +387,9 @@ h1 {
   background: var(--brand-primary);
   border-radius: 50%;
   z-index: 2;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   box-shadow: 0 0 0 4px var(--background);
 }
 
@@ -546,4 +556,27 @@ h1 {
   .timeline-content {
     transition: none;
   }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Mapbox Map Customizations
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.mapboxgl-popup-content {
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.mapboxgl-popup-close-button {
+  font-size: 1.25rem;
+  padding: 0.25rem 0.5rem;
+  color: #64748b;
+}
+
+.mapboxgl-popup-close-button:hover {
+  background: transparent;
+  color: #1e293b;
 }

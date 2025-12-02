@@ -1,4 +1,22 @@
 // src/sanity/lib/queries.ts
+
+// Member organizations for map
+export const MEMBER_ORGS_QUERY = `
+*[_type == "memberOrg" && isActive == true] | order(name asc){
+  _id,
+  name,
+  university,
+  address,
+  location,
+  coordinates,
+  website,
+  instagram,
+  description,
+  region,
+  "logoUrl": logo.asset->url
+}
+`
+
 // Minimal GROQ used by /resources/blog page
 export const POSTS_QUERY = `
 *[_type == "post" && publishedAt < now()] | order(publishedAt desc){

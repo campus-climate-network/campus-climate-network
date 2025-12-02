@@ -2,6 +2,11 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal'
+import { client } from '@/sanity/lib/client'
+import { urlFor } from '@/sanity/lib/image'
+import { MemberMapWrapper } from '@/components/member-map-wrapper'
+import { MEMBER_ORGS_QUERY } from '@/sanity/lib/queries'
+import type { MemberOrg as MapMemberOrg } from '@/components/member-map'
 
 export const metadata: Metadata = {
   title: 'Our Network',
@@ -9,89 +14,36 @@ export const metadata: Metadata = {
     'Meet the student-led climate justice groups in the Campus Climate Network—a national coalition fighting for fossil-free futures on campuses across the country.',
 }
 
-const memberOrgs = [
-  {
-    name: 'Cambridge Climate Justice',
-    logo: '/member-logos/cambridge-climate-justice.png',
-  },
-  {
-    name: 'Climate Crisis Coalition',
-    logo: '/member-logos/climate-crisis-coalition-logo.png',
-  },
-  {
-    name: 'Climate Justice UBC',
-    logo: '/member-logos/climate-justice-ubc.png',
-  },
-  {
-    name: 'Colorado Climate Reinvestment Coalition',
-    logo: '/member-logos/colorado-climate-reinvestment-coalition.jpeg',
-  },
-  { name: 'Cornell on Fire', logo: '/member-logos/cornell-on-fire.png' },
-  {
-    name: 'Divest Claremont Colleges',
-    logo: '/member-logos/divest-claremont-colleges.jpeg',
-  },
-  { name: 'Divest Princeton', logo: '/member-logos/divest-princeton-logo.png' },
-  { name: 'Divest CSU', logo: '/member-logos/divestcsu.png' },
-  {
-    name: 'Duke Climate Coalition',
-    logo: '/member-logos/duke-climate-coalition.png',
-  },
-  {
-    name: 'Fossil Free Divest Harvard',
-    logo: '/member-logos/fossil-free-divest-harvard.png',
-  },
-  {
-    name: 'Fossil Free Fordham',
-    logo: '/member-logos/fossil-free-fordham-logo.png',
-  },
-  { name: 'Fossil Free Penn', logo: '/member-logos/fossil-free-penn.png' },
-  {
-    name: 'GND at UC San Diego',
-    logo: '/member-logos/gnd-at-uc-san-diego.png',
-  },
-  {
-    name: 'High School Divestment Coalition',
-    logo: '/member-logos/high-school-divestment-coalition.png',
-  },
-  {
-    name: 'Imperial Climate Action',
-    logo: '/member-logos/imperial-climate-action.png',
-  },
-  { name: 'MIT Divest', logo: '/member-logos/mit-divest.png' },
-  { name: 'SPAC', logo: '/member-logos/spac.jpg' },
-  {
-    name: 'Students for Environmental Concerns',
-    logo: '/member-logos/students-for-environmental-concerns.png',
-  },
-  {
-    name: 'Sunrise American University',
-    logo: '/member-logos/sunrise-american-university.png',
-  },
-  { name: 'Sunrise Brown', logo: '/member-logos/sunrise-brown.png' },
-  { name: 'Sunrise Columbia', logo: '/member-logos/sunrise-columbia.png' },
-  {
-    name: 'Sunrise Movement Gainesville',
-    logo: '/member-logos/sunrise-movement-gainesville.jpg',
-  },
-  { name: 'Sunrise NYU', logo: '/member-logos/sunrise-nyu.png' },
-  {
-    name: 'The Coalition for a True Sustainability',
-    logo: '/member-logos/the-coalition-for-a-true-sustainability.png',
-  },
-  { name: 'Trinity Divests', logo: '/member-logos/trinity-divests.png' },
-  { name: 'UC Green New Deal', logo: '/member-logos/uc-green-new-deal.png' },
-  {
-    name: 'UCL Climate Action Society',
-    logo: '/member-logos/ucl-climate-action-society.jpeg',
-  },
-  {
-    name: 'Yale Student Environmental Coalition',
-    logo: '/member-logos/yale-student-environmental-coalition.png',
-  },
-] as const
+interface MemberOrg {
+  _id: string
+  name: string
+  logo?: {
+    asset: {
+      _ref: string
+    }
+  }
+}
 
-export default function OurNetworkPage() {
+async function getMembers(): Promise<MemberOrg[]> {
+  return client.fetch(`
+    *[_type == "memberOrg" && isActive == true] | order(name asc){
+      _id,
+      name,
+      logo
+    }
+  `)
+}
+
+async function getMembersForMap(): Promise<MapMemberOrg[]> {
+  return client.fetch(MEMBER_ORGS_QUERY)
+}
+
+export default async function OurNetworkPage() {
+  const [memberOrgs, mapMembers] = await Promise.all([
+    getMembers(),
+    getMembersForMap(),
+  ])
+
   return (
     <div className="page-wrapper">
       <section className="bg-brand-secondary/10 section-hero">
@@ -154,17 +106,25 @@ export default function OurNetworkPage() {
         >
           {memberOrgs.map((org) => (
             <div
-              key={org.name}
+              key={org._id}
               className="flex flex-col rounded-3xl border border-brand-primary/10 bg-white p-6"
             >
               <div className="relative h-28 w-full">
-                <Image
-                  src={org.logo}
-                  alt={`${org.name} logo`}
-                  fill
-                  className="object-contain"
-                  sizes="(min-width: 1280px) 240px, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 80vw"
-                />
+                {org.logo ? (
+                  <Image
+                    src={urlFor(org.logo).width(400).height(224).fit('max').url()}
+                    alt={`${org.name} logo`}
+                    fill
+                    className="object-contain"
+                    sizes="(min-width: 1280px) 240px, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 80vw"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center rounded-xl bg-brand-primary/5">
+                    <span className="text-2xl font-bold text-brand-primary/30">
+                      {org.name.charAt(0)}
+                    </span>
+                  </div>
+                )}
               </div>
               <p className="mt-4 text-sm font-semibold text-slate-900">
                 {org.name}
@@ -255,6 +215,25 @@ export default function OurNetworkPage() {
             </a>
           </div>
         </ScrollReveal>
+      </section>
+
+      <section className="bg-slate-50 section-hero">
+        <div className="page-container stack stack-cozy text-left">
+          <ScrollReveal variant="fade-up">
+            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
+              Find us on the map
+            </h2>
+            <p className="text-base text-slate-600">
+              Explore our member organizations across the country and around the
+              world.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal variant="blossom" delay={100}>
+            <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-lg">
+              <MemberMapWrapper members={mapMembers} />
+            </div>
+          </ScrollReveal>
+        </div>
       </section>
     </div>
   )

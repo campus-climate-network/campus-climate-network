@@ -4,6 +4,10 @@ import Link from 'next/link'
 import { HeroCarousel } from '@/components/hero-carousel'
 import { MovementCarousel } from '@/components/movement-carousel'
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal'
+import { MemberMapWrapper } from '@/components/member-map-wrapper'
+import { client } from '@/sanity/lib/client'
+import { MEMBER_ORGS_QUERY } from '@/sanity/lib/queries'
+import type { MemberOrg } from '@/components/member-map'
 
 export const metadata: Metadata = {
   title: {
@@ -90,7 +94,12 @@ const movementHighlights = [
   },
 ]
 
-export default function Home() {
+async function getMembers(): Promise<MemberOrg[]> {
+  return client.fetch(MEMBER_ORGS_QUERY)
+}
+
+export default async function Home() {
+  const members = await getMembers()
   return (
     <div className="page-wrapper">
       <section className="relative isolate overflow-hidden bg-gradient-to-br from-brand-secondary via-brand-tertiary to-brand-primary text-white">
@@ -233,17 +242,7 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal variant="blossom" delay={150}>
             <div className="rounded-3xl border border-brand-secondary/30 overflow-hidden">
-              <div className="relative h-[320px] sm:h-[420px] lg:h-[500px]">
-                <iframe
-                  title="Campus Climate Network member map"
-                  src="https://www.google.com/maps/d/embed?mid=1jL5D_L1471XrlrzwzSC-d3mWE_KyEJU&ehbc=2E312F&nopro&ll=10.14543330073012,-107.3738707&z=2"
-                  className="absolute inset-x-0 -top-16 h-[calc(100%+4rem)] w-full"
-                  loading="lazy"
-                  allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
-                  style={{ border: 0 }}
-                />
-              </div>
+              <MemberMapWrapper members={members} compact />
             </div>
           </ScrollReveal>
         </div>
