@@ -171,20 +171,29 @@ h1 {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   Scroll Reveal Animations - Subtle "blossom" effect
+   Scroll Reveal Animations - Progressive enhancement approach
+   Content is VISIBLE by default. JS adds .will-animate to enable animations.
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Base state for all reveal variants */
+/* Base state: content is visible (safe default) */
 .scroll-reveal-blossom,
 .scroll-reveal-fade-up,
 .scroll-reveal-fade,
 .scroll-reveal-scale {
+  /* No opacity: 0 here - content shows by default */
+}
+
+/* Only hide when JS confirms it will animate (adds .will-animate class) */
+.scroll-reveal-blossom.will-animate,
+.scroll-reveal-fade-up.will-animate,
+.scroll-reveal-fade.will-animate,
+.scroll-reveal-scale.will-animate {
   opacity: 0;
   will-change: opacity, transform;
 }
 
 /* Blossom - scale up with soft fade and slight rise */
-.scroll-reveal-blossom {
+.scroll-reveal-blossom.will-animate {
   transform: scale(0.92) translateY(16px);
   filter: blur(2px);
 }
@@ -203,7 +212,7 @@ h1 {
 }
 
 /* Fade up - simple upward motion with fade */
-.scroll-reveal-fade-up {
+.scroll-reveal-fade-up.will-animate {
   transform: translateY(24px);
 }
 
@@ -225,7 +234,7 @@ h1 {
 }
 
 /* Scale - gentle scale up */
-.scroll-reveal-scale {
+.scroll-reveal-scale.will-animate {
   transform: scale(0.9);
 }
 
@@ -249,6 +258,15 @@ h1 {
     transform: none;
     filter: none;
     transition: none;
+  }
+
+  .scroll-reveal-blossom.will-animate,
+  .scroll-reveal-fade-up.will-animate,
+  .scroll-reveal-fade.will-animate,
+  .scroll-reveal-scale.will-animate {
+    opacity: 1;
+    transform: none;
+    filter: none;
   }
 }
 

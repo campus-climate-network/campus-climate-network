@@ -24,64 +24,50 @@ export function ScrollReveal({
   as: Component = 'div',
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  // Start as null - we don't know if we need to animate yet
+  const [animationState, setAnimationState] = useState<'idle' | 'will-animate' | 'visible'>('idle')
 
   useEffect(() => {
     const element = ref.current
     if (!element) return
 
-    // Helper to check if element is in viewport
-    const checkInViewport = () => {
-      const rect = element.getBoundingClientRect()
-      // More lenient check - element is "in view" if any part could be visible
-      return rect.top < window.innerHeight + 100 && rect.bottom > -100
+    const rect = element.getBoundingClientRect()
+    const isInViewport = rect.top < window.innerHeight && rect.bottom > 0
+
+    if (isInViewport) {
+      // Already in viewport - just show it immediately, no animation needed
+      setAnimationState('visible')
+      return
     }
 
-    // Use requestAnimationFrame to ensure layout is complete before checking
-    const rafId = requestAnimationFrame(() => {
-      if (checkInViewport()) {
-        setIsVisible(true)
-        return
-      }
+    // Not in viewport - set up animation
+    setAnimationState('will-animate')
 
-      // Set up observer for when it scrolls into view
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true)
-            observer.unobserve(element)
-          }
-        },
-        { threshold: Math.min(threshold, 0.1), rootMargin: '100px 0px 50px 0px' }
-      )
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimationState('visible')
+          observer.unobserve(element)
+        }
+      },
+      { threshold: Math.min(threshold, 0.1), rootMargin: '50px 0px 0px 0px' }
+    )
 
-      observer.observe(element)
-
-      // Store observer for cleanup
-      ;(element as HTMLElement & { _scrollObserver?: IntersectionObserver })._scrollObserver = observer
-    })
-
-    // Fallback: recheck after delay for mobile layout settling
-    const fallbackTimer = setTimeout(() => {
-      if (checkInViewport()) {
-        setIsVisible(true)
-      }
-    }, 150)
-
-    return () => {
-      cancelAnimationFrame(rafId)
-      clearTimeout(fallbackTimer)
-      const obs = (element as HTMLElement & { _scrollObserver?: IntersectionObserver })._scrollObserver
-      if (obs) obs.disconnect()
-    }
+    observer.observe(element)
+    return () => observer.disconnect()
   }, [threshold])
 
   const variantClass = `scroll-reveal-${variant}`
+  const stateClasses = animationState === 'will-animate' 
+    ? 'will-animate' 
+    : animationState === 'visible' 
+      ? 'is-visible' 
+      : ''
 
   return (
     <Component
       ref={ref as React.Ref<unknown>}
-      className={`${variantClass} ${isVisible ? 'is-visible' : ''} ${className}`}
+      className={`${variantClass} ${stateClasses} ${className}`}
       style={{
         '--reveal-delay': `${delay}ms`,
         '--reveal-duration': `${duration}ms`,
@@ -112,59 +98,44 @@ export function StaggerReveal({
   childClassName = '',
 }: StaggerRevealProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const [animationState, setAnimationState] = useState<'idle' | 'will-animate' | 'visible'>('idle')
 
   useEffect(() => {
     const element = ref.current
     if (!element) return
 
-    // Helper to check if element is in viewport
-    const checkInViewport = () => {
-      const rect = element.getBoundingClientRect()
-      // More lenient check - element is "in view" if any part could be visible
-      return rect.top < window.innerHeight + 100 && rect.bottom > -100
+    const rect = element.getBoundingClientRect()
+    const isInViewport = rect.top < window.innerHeight && rect.bottom > 0
+
+    if (isInViewport) {
+      // Already in viewport - just show it immediately, no animation needed
+      setAnimationState('visible')
+      return
     }
 
-    // Use requestAnimationFrame to ensure layout is complete before checking
-    const rafId = requestAnimationFrame(() => {
-      if (checkInViewport()) {
-        setIsVisible(true)
-        return
-      }
+    // Not in viewport - set up animation
+    setAnimationState('will-animate')
 
-      // Set up observer for when it scrolls into view
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true)
-            observer.unobserve(element)
-          }
-        },
-        { threshold: Math.min(threshold, 0.1), rootMargin: '100px 0px 50px 0px' }
-      )
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimationState('visible')
+          observer.unobserve(element)
+        }
+      },
+      { threshold: Math.min(threshold, 0.1), rootMargin: '50px 0px 0px 0px' }
+    )
 
-      observer.observe(element)
-
-      // Store observer for cleanup
-      ;(element as HTMLElement & { _scrollObserver?: IntersectionObserver })._scrollObserver = observer
-    })
-
-    // Fallback: recheck after delay for mobile layout settling
-    const fallbackTimer = setTimeout(() => {
-      if (checkInViewport()) {
-        setIsVisible(true)
-      }
-    }, 150)
-
-    return () => {
-      cancelAnimationFrame(rafId)
-      clearTimeout(fallbackTimer)
-      const obs = (element as HTMLElement & { _scrollObserver?: IntersectionObserver })._scrollObserver
-      if (obs) obs.disconnect()
-    }
+    observer.observe(element)
+    return () => observer.disconnect()
   }, [threshold])
 
   const variantClass = `scroll-reveal-${variant}`
+  const stateClasses = animationState === 'will-animate' 
+    ? 'will-animate' 
+    : animationState === 'visible' 
+      ? 'is-visible' 
+      : ''
 
   return (
     <div ref={ref} className={className}>
@@ -172,7 +143,7 @@ export function StaggerReveal({
         ? children.map((child, index) => (
             <div
               key={index}
-              className={`${variantClass} ${isVisible ? 'is-visible' : ''} ${childClassName}`}
+              className={`${variantClass} ${stateClasses} ${childClassName}`}
               style={{
                 '--reveal-delay': `${index * staggerDelay}ms`,
                 '--reveal-duration': `${duration}ms`,
