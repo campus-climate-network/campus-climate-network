@@ -30,6 +30,14 @@ export function ScrollReveal({
     const element = ref.current
     if (!element) return
 
+    // Immediately check if element is already in viewport
+    const rect = element.getBoundingClientRect()
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setIsVisible(true)
+      return
+    }
+
+    // Otherwise set up observer for when it scrolls into view
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -37,7 +45,7 @@ export function ScrollReveal({
           observer.unobserve(element)
         }
       },
-      { threshold, rootMargin: '0px 0px -50px 0px' }
+      { threshold: Math.min(threshold, 0.1), rootMargin: '50px 0px 0px 0px' }
     )
 
     observer.observe(element)
@@ -86,6 +94,14 @@ export function StaggerReveal({
     const element = ref.current
     if (!element) return
 
+    // Immediately check if element is already in viewport
+    const rect = element.getBoundingClientRect()
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setIsVisible(true)
+      return
+    }
+
+    // Otherwise set up observer for when it scrolls into view
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -93,7 +109,7 @@ export function StaggerReveal({
           observer.unobserve(element)
         }
       },
-      { threshold, rootMargin: '0px 0px -50px 0px' }
+      { threshold: Math.min(threshold, 0.1), rootMargin: '50px 0px 0px 0px' }
     )
 
     observer.observe(element)
