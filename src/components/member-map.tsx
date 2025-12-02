@@ -448,7 +448,7 @@ export default function MemberMap({
 
         {/* Sidebar - hidden in compact mode */}
         {!compact && (
-          <div className="flex max-h-[250px] w-full shrink-0 flex-col border-t border-slate-200 bg-white sm:max-h-[300px] lg:max-h-none lg:w-80 lg:border-l lg:border-t-0">
+          <div className="flex max-h-[500px] w-full shrink-0 flex-col border-t border-slate-200 bg-white sm:max-h-[550px] lg:max-h-none lg:w-80 lg:border-l lg:border-t-0">
             {/* Search header */}
             <div className="border-b border-slate-200 p-4">
               <div className="relative">
