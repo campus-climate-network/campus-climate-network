@@ -137,11 +137,11 @@ export default function NetworkCampaignsPage() {
           <div className="stack stack-cozy">
             <div className="stack stack-dense">
               <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-                Share your campaign
+                Get your campaign started today
               </h2>
               <p className="text-base text-slate-600">
-                We uplift stories from across the network and coordinate national
-                actions. Submit your campaign or reach out for support.
+                Whether you are just starting out or looking to scale your
+                campaign, we can help you get started.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -149,14 +149,8 @@ export default function NetworkCampaignsPage() {
                 className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
                 href="/take-action"
               >
-                Join coordination calls
+                Schedule an onboarding call
               </Link>
-              <a
-                className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
-                href="mailto:info@campusclimatenetwork.org"
-              >
-                Submit an update
-              </a>
             </div>
           </div>
         </ScrollReveal>
