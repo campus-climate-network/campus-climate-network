@@ -15,7 +15,7 @@ const challenges = [
   },
   {
     title: 'The fossil fuel industry impedes climate justice.',
-    body: 'Fossil fuel corporations sow doubt, fund disinformation, and rely on corporate violence to protect their profits. Their model harms marginalized communities and delays the energy transition we need.',
+    body: 'The fossil fuel industry’s business model is unjust at its core. The industry systematically sows doubt to delay a just energy transition. Its continued reliance on corporate violence and extraction of fossil fuels systematically harms marginalized communities.',
   },
   {
     title: 'Our universities are overrun by corporate interests.',
@@ -26,7 +26,7 @@ const challenges = [
 const pillars = [
   {
     title: 'We build a powerful coalition.',
-    body: 'We convene student-led climate justice groups across continents, providing training, resources, and community so every organizer can run winning campaigns and stay in the movement for the long haul.',
+    body: 'We convene student-led climate justice groups across the country, providing training, resources, and community so every organizer can run winning campaigns and stay in the movement for the long haul.',
   },
   {
     title: 'We favor decentralized, grassroots change.',
@@ -35,6 +35,25 @@ const pillars = [
   {
     title: 'We connect to the broader climate justice movement.',
     body: 'We partner with allied organizations, respond to moments of mass mobilization, and ensure campus campaigns reinforce global demands for a just transition.',
+  },
+]
+
+const whatWeDo = [
+  {
+    title: 'We unify the campus climate movement',
+    body: 'We share skills, work together, mentor each other, and coordinate our efforts to create a stronger and more united campus climate movement.',
+  },
+  {
+    title: 'We run effective campaigns on campus',
+    body: 'We take nonviolent direct action to force decision makers to confront the violence of the fossil fuel industry and pick a side. Our tactics are accessible, highly visible, and inspiring. They compel others to join our movement.',
+  },
+  {
+    title: 'We frame the conversation',
+    body: "We use our collective voice – on a local, national, and global scale – to set the conversation about the fossil fuel industry's influence on higher education.",
+  },
+  {
+    title: 'We center those most impacted by the climate crisis',
+    body: 'We highlight the violence enacted on marginalized groups, both in our communities and around the world, by the corporations that our universities wrongly continue to see as reputable partners. We center these frontline struggles in our campus campaigns. As a coalition, we build relationships and stand in solidarity with frontline organizations.',
   },
 ]
 
@@ -115,10 +134,6 @@ export default function OurApproachPage() {
               <h2 className="text-2xl font-semibold sm:text-3xl">
                 What we&apos;re up against
               </h2>
-              <p className="text-sm text-slate-200">
-                We&apos;re honest about the landscape so we can strategize to
-                win.
-              </p>
             </div>
           </ScrollReveal>
           <StaggerReveal
@@ -148,10 +163,6 @@ export default function OurApproachPage() {
               <h2 className="text-2xl font-semibold text-brand-primary sm:text-3xl">
                 How we unite
               </h2>
-              <p className="text-base text-slate-600">
-                We weave together decentralized grassroots campaigns into a
-                powerful, coordinated movement.
-              </p>
             </div>
           </ScrollReveal>
           <StaggerReveal
@@ -168,6 +179,35 @@ export default function OurApproachPage() {
                   {pillar.title}
                 </h3>
                 <p className="text-sm text-slate-600">{pillar.body}</p>
+              </div>
+            ))}
+          </StaggerReveal>
+        </div>
+      </section>
+
+      <section className="bg-brand-cream/60 section-dark -mt-8 sm:-mt-10 lg:-mt-12">
+        <div className="page-container stack stack-tight">
+          <ScrollReveal variant="fade-up">
+            <div className="stack stack-dense">
+              <h2 className="text-2xl font-semibold text-brand-primary sm:text-3xl">
+                What we do
+              </h2>
+            </div>
+          </ScrollReveal>
+          <StaggerReveal
+            staggerDelay={120}
+            variant="blossom"
+            className="grid gap-6 md:grid-cols-2"
+          >
+            {whatWeDo.map((item) => (
+              <div
+                key={item.title}
+                className="stack stack-dense rounded-3xl border border-brand-primary/20 bg-white p-6"
+              >
+                <h3 className="text-lg font-semibold text-brand-primary">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-slate-600">{item.body}</p>
               </div>
             ))}
           </StaggerReveal>
