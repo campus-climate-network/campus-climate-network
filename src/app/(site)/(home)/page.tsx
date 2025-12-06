@@ -109,7 +109,7 @@ export default async function Home() {
   const members = await getMembers()
   return (
     <div className="page-wrapper">
-      <section className="relative isolate overflow-hidden bg-gradient-to-br from-brand-secondary via-brand-tertiary to-brand-primary text-white">
+      <section className="relative isolate overflow-hidden bg-linear-to-br from-brand-secondary via-brand-tertiary to-brand-primary text-white">
         <div className="page-container section-hero grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div className="stack stack-tight">
             <p className="eyebrow text-xs sm:text-sm text-brand-cream/70">
