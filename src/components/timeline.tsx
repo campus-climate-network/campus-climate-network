@@ -14,7 +14,7 @@ interface TimelineProps {
 
 export function Timeline({ items }: TimelineProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [progress, setProgress] = useState(0)
+  const progressRef = useRef<HTMLDivElement>(null)
   const [visibleItems, setVisibleItems] = useState<boolean[]>(
     new Array(items.length).fill(false),
   )
@@ -22,9 +22,10 @@ export function Timeline({ items }: TimelineProps) {
 
   useEffect(() => {
     const container = containerRef.current
-    if (!container) return
+    const progressBar = progressRef.current
+    if (!container || !progressBar) return
 
-    const handleScroll = () => {
+    const updateProgress = () => {
       const rect = container.getBoundingClientRect()
       const windowHeight = window.innerHeight
       const containerTop = rect.top
@@ -34,15 +35,23 @@ export function Timeline({ items }: TimelineProps) {
       const start = windowHeight * 0.6 // Start when container is 60% from top
       const end = -containerHeight + windowHeight * 0.4 // End when container is mostly past
 
+      let progress: number
       if (containerTop > start) {
-        setProgress(0)
+        progress = 0
       } else if (containerTop < end) {
-        setProgress(100)
+        progress = 100
       } else {
         const scrolled = start - containerTop
         const total = start - end
-        setProgress(Math.min(100, Math.max(0, (scrolled / total) * 100)))
+        progress = Math.min(100, Math.max(0, (scrolled / total) * 100))
       }
+
+      // Direct DOM manipulation for smooth animation
+      progressBar.style.height = `${progress}%`
+    }
+
+    const handleScroll = () => {
+      requestAnimationFrame(updateProgress)
     }
 
     // Intersection observer for individual items
@@ -67,7 +76,7 @@ export function Timeline({ items }: TimelineProps) {
     })
 
     window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll() // Initial call
+    updateProgress() // Initial call
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
@@ -81,8 +90,8 @@ export function Timeline({ items }: TimelineProps) {
       <div className="timeline-track">
         <div className="timeline-track-bg" />
         <div
+          ref={progressRef}
           className="timeline-track-progress"
-          style={{ height: `${progress}%` }}
         />
       </div>
 

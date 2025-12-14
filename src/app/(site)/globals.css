@@ -333,7 +333,7 @@ h1 {
     var(--brand-primary) 100%
   );
   border-radius: inherit;
-  transition: height 0.1s ease-out;
+  /* No transition - updates immediately with scroll for smooth animation */
 }
 
 /* Timeline items container */
