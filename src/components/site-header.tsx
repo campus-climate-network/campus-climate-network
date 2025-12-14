@@ -1017,10 +1017,10 @@ export function SiteHeader() {
     <>
       <header
         className={classNames(
-          'sticky top-0 z-50 border-b border-slate-200/40 transition-all duration-200',
+          'sticky top-0 z-50 border-b border-slate-200/40 py-3 transition-all duration-200',
           scrolled
-            ? 'bg-white/80 py-3 shadow-[0_12px_40px_-24px_rgba(15,23,42,0.35)] backdrop-blur supports-[backdrop-filter]:bg-white/70'
-            : 'bg-white/95 py-5 backdrop-blur',
+            ? 'bg-white/80 shadow-[0_12px_40px_-24px_rgba(15,23,42,0.35)] backdrop-blur supports-[backdrop-filter]:bg-white/70'
+            : 'bg-white/95 lg:py-5 backdrop-blur',
         )}
       >
         <div className="page-container flex items-center justify-between gap-4">

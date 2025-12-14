@@ -51,7 +51,7 @@ export const navEntries: NavEntry[] = [
         title: 'Work with us',
         items: [
           {
-            label: "We're hiring",
+            label: 'Careers',
             href: '/hiring',
             description:
               'Open roles for organizers, communicators, and builders.',

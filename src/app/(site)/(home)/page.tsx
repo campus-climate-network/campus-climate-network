@@ -116,7 +116,7 @@ export default async function Home() {
               Campus Climate Network
             </p>
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-              The student climate movement is here.
+              The largest network of student climate activists in the world.
             </h1>
             <p className="text-base sm:text-lg text-brand-cream/90">
               We provide students with the skills, resources, and connections
