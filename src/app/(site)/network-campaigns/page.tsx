@@ -148,7 +148,7 @@ export default async function NetworkCampaignsPage() {
                           className="flex items-center gap-3 text-sm"
                         >
                           {win.memberOrg.logoUrl ? (
-                            <div className="relative h-6 w-6 flex-shrink-0 overflow-hidden rounded bg-white shadow-sm">
+                            <div className="relative h-6 w-6 shrink-0 overflow-hidden rounded bg-white shadow-sm">
                               <Image
                                 src={win.memberOrg.logoUrl}
                                 alt={`${win.memberOrg.name} logo`}
@@ -158,7 +158,7 @@ export default async function NetworkCampaignsPage() {
                               />
                             </div>
                           ) : (
-                            <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded bg-brand-primary/10">
+                            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-brand-primary/10">
                               <span className="text-[10px] font-bold text-brand-primary">
                                 {win.memberOrg.name.charAt(0)}
                               </span>
