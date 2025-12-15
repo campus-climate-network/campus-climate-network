@@ -58,13 +58,25 @@ export function SiteFooter() {
             © Campus Climate Network {new Date().getFullYear()}
           </p>
           <p className="text-xs text-slate-400">
-            Site by{' '}
+            This website is{' '}
+            <a
+              href="https://github.com/campusclimatenetwork/website"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline transition hover:text-slate-300"
+            >
+              open source
+            </a>
+            .
+            <br />
+            Site design & development by{' '}
             <a
               className="underline transition hover:text-slate-300"
               href="https://www.dylanwahbe.com"
             >
-              Dylan Wahbe.
+              Dylan Wahbe
             </a>
+            .
           </p>
         </div>
         <div className="order-1 grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4 lg:order-2 lg:grid-cols-4">
