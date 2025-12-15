@@ -67,7 +67,24 @@ export const MOVEMENT_WINS_QUERY = `
   title,
   date,
   description,
-  category,
+  campaign,
+  link,
+  "memberOrg": memberOrg->{
+    _id,
+    name,
+    "logoUrl": logo.asset->url
+  }
+}
+`
+
+// Movement wins filtered by campaign slug
+export const MOVEMENT_WINS_BY_CAMPAIGN_QUERY = `
+*[_type == "movementWin" && campaign == $campaign] | order(date desc){
+  _id,
+  title,
+  date,
+  description,
+  campaign,
   link,
   "memberOrg": memberOrg->{
     _id,

@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal'
+import { client } from '@/sanity/lib/client'
+import { MOVEMENT_WINS_QUERY } from '@/sanity/lib/queries'
 
 export const metadata: Metadata = {
   title: 'Network Campaigns',
@@ -8,35 +11,79 @@ export const metadata: Metadata = {
     'Explore coordinated campus campaigns for fossil-free futures including Fossil Free Research, divestment, and ending fossil fuel sponsorships.',
 }
 
-const campaignHighlights = [
+interface MovementWin {
+  _id: string
+  title: string
+  date: string
+  description?: string
+  campaign?: string
+  link?: string
+  memberOrg: {
+    _id: string
+    name: string
+    logoUrl?: string
+  }
+}
+
+const campaigns = [
   {
+    slug: 'fossil-free-research',
     title: 'Fossil Free Research',
     description:
-      "For decades, the fossil fuel industry has sought to mislead the public on the realities of climate change and obstruct climate action. Fossil fuel funded research provides Big Oil with undue legitimacy, bolsters industry greenwashing, and skews the research we need to inform a just energy transition. It's time to end fossil fuel-funded research at our schools.",
+      "For decades, the fossil fuel industry has sought to mislead the public on the realities of climate change and obstruct climate action. Fossil fuel funded research provides Big Oil with undue legitimacy, bolsters industry greenwashing, and skews the research we need to inform a just energy transition. It&apos;s time to end fossil fuel-funded research at our schools.",
   },
   {
+    slug: 'campus-decarbonization',
     title: 'Campus decarbonization',
     description:
       'Universities cannot be true climate leaders while continuing to rely on oil and gas for energy. We are fighting back against performative carbon neutrality plans that lack transparency and rely on greenwashing solutions such as carbon offsets. We demand genuine campus decarbonization.',
   },
   {
+    slug: 'green-new-deal',
     title: 'Green New Deal for campuses',
     description:
-      "To achieve a just energy transition, we will have to change everything. Let's start with our universities.",
+      "To achieve a just energy transition, we will have to change everything. Let&apos;s start with our universities.",
   },
   {
+    slug: 'fossil-free-careers',
     title: 'Fossil free careers',
     description:
       'We envision a future with just, green, good jobs for all. Fossil fuel industry recruitment on our campuses must stop.',
   },
   {
+    slug: 'fossil-fuel-divestment',
     title: 'Fossil fuel divestment',
     description:
       'Our planet is burning and our schools are investing in the fire. Our endowments must not be used to fuel the climate crisis.',
   },
 ]
 
-export default function NetworkCampaignsPage() {
+async function getMovementWins(): Promise<MovementWin[]> {
+  return client.fetch(MOVEMENT_WINS_QUERY)
+}
+
+function formatDate(dateString: string): string {
+  const date = new Date(dateString)
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+  })
+}
+
+export default async function NetworkCampaignsPage() {
+  const allWins = await getMovementWins()
+
+  // Group wins by campaign
+  const winsByCampaign = campaigns.reduce(
+    (acc, campaign) => {
+      acc[campaign.slug] = allWins
+        .filter((win) => win.campaign === campaign.slug)
+        .slice(0, 3) // Get only the 3 most recent
+      return acc
+    },
+    {} as Record<string, MovementWin[]>,
+  )
+
   return (
     <div className="page-wrapper">
       <section className="bg-brand-primary/10 section-hero">
@@ -50,7 +97,7 @@ export default function NetworkCampaignsPage() {
           <p className="text-base text-slate-700">
             Our member organizations run powerful local campaigns and come
             together for national moments that spotlight fossil fuel influence.
-            Here’s a snapshot of the work underway.
+            Here&apos;s a snapshot of the work underway.
           </p>
         </div>
       </section>
@@ -72,17 +119,76 @@ export default function NetworkCampaignsPage() {
           variant="blossom"
           className="grid gap-6 md:grid-cols-2"
         >
-          {campaignHighlights.map((campaign) => (
-            <div
-              key={campaign.title}
-              className="stack stack-dense rounded-3xl border border-brand-secondary/20 bg-white p-6"
-            >
-              <h3 className="text-lg font-semibold text-brand-primary">
-                {campaign.title}
-              </h3>
-              <p className="text-sm text-slate-600">{campaign.description}</p>
-            </div>
-          ))}
+          {campaigns.map((campaign) => {
+            const campaignWins = winsByCampaign[campaign.slug] || []
+            return (
+              <div
+                key={campaign.slug}
+                className="flex flex-col rounded-3xl border border-brand-secondary/20 bg-white p-6"
+              >
+                <div className="stack stack-dense flex-1">
+                  <h3 className="text-lg font-semibold text-brand-primary">
+                    {campaign.title}
+                  </h3>
+                  <p className="text-sm text-slate-600">{campaign.description}</p>
+                </div>
+
+                {/* Recent Wins Section */}
+                {campaignWins.length > 0 && (
+                  <div className="mt-4 pt-4 border-t border-slate-100">
+                    <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">
+                      Recent Wins
+                    </p>
+                    <div className="space-y-2">
+                      {campaignWins.map((win) => (
+                        <div
+                          key={win._id}
+                          className="flex items-center gap-3 text-sm"
+                        >
+                          {win.memberOrg.logoUrl ? (
+                            <div className="relative h-6 w-6 flex-shrink-0 overflow-hidden rounded bg-white shadow-sm">
+                              <Image
+                                src={win.memberOrg.logoUrl}
+                                alt={`${win.memberOrg.name} logo`}
+                                fill
+                                className="object-contain p-0.5"
+                                sizes="24px"
+                              />
+                            </div>
+                          ) : (
+                            <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded bg-brand-primary/10">
+                              <span className="text-[10px] font-bold text-brand-primary">
+                                {win.memberOrg.name.charAt(0)}
+                              </span>
+                            </div>
+                          )}
+                          <div className="flex-1 min-w-0">
+                            <p className="text-slate-700 truncate leading-tight">
+                              {win.title}
+                            </p>
+                            <p className="text-xs text-slate-400">
+                              {formatDate(win.date)}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* View All Link */}
+                <div className="mt-4 pt-3 border-t border-slate-100">
+                  <Link
+                    href={`/network-campaigns/${campaign.slug}`}
+                    className="text-sm font-medium text-brand-secondary hover:text-brand-primary transition-colors inline-flex items-center gap-1"
+                  >
+                    View all wins
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+              </div>
+            )
+          })}
         </StaggerReveal>
       </section>
 

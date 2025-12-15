@@ -8,7 +8,7 @@ interface MovementWin {
   title: string
   date: string
   description?: string
-  category?: string
+  campaign?: string
   link?: string
   memberOrg: {
     _id: string
@@ -19,7 +19,7 @@ interface MovementWin {
 
 interface WinsTimelineProps {
   wins: MovementWin[]
-  categoryLabels: Record<string, string>
+  campaignLabels: Record<string, string>
 }
 
 function formatDate(dateString: string): string {
@@ -30,7 +30,7 @@ function formatDate(dateString: string): string {
   })
 }
 
-export function WinsTimeline({ wins, categoryLabels }: WinsTimelineProps) {
+export function WinsTimeline({ wins, campaignLabels }: WinsTimelineProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const progressRef = useRef<HTMLDivElement>(null)
   const [visibleItems, setVisibleItems] = useState<boolean[]>(
@@ -148,9 +148,9 @@ export function WinsTimeline({ wins, categoryLabels }: WinsTimelineProps) {
                     <span className="text-xs font-medium text-slate-500">
                       {formatDate(win.date)}
                     </span>
-                    {win.category && (
+                    {win.campaign && (
                       <span className="inline-flex items-center rounded-full bg-brand-primary/10 px-2 py-0.5 text-[10px] font-medium text-brand-primary">
-                        {categoryLabels[win.category] || win.category}
+                        {campaignLabels[win.campaign] || win.campaign}
                       </span>
                     )}
                   </div>

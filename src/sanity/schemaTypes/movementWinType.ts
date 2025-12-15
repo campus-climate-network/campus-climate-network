@@ -29,15 +29,17 @@ export const movementWinType = defineType({
       description: 'Summary of the win',
     }),
     defineField({
-      name: 'category',
-      title: 'Category',
+      name: 'campaign',
+      title: 'Campaign',
       type: 'string',
+      description: 'The CCN campaign this win is associated with',
       options: {
         list: [
-          { title: 'Divestment', value: 'divestment' },
-          { title: 'Policy Change', value: 'policy-change' },
-          { title: 'Research Ban', value: 'research-ban' },
-          { title: 'Transparency', value: 'transparency' },
+          { title: 'Fossil Free Research', value: 'fossil-free-research' },
+          { title: 'Campus Decarbonization', value: 'campus-decarbonization' },
+          { title: 'Green New Deal', value: 'green-new-deal' },
+          { title: 'Fossil Free Careers', value: 'fossil-free-careers' },
+          { title: 'Fossil Fuel Divestment', value: 'fossil-fuel-divestment' },
           { title: 'Other', value: 'other' },
         ],
       },

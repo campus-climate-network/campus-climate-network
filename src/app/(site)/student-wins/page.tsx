@@ -16,7 +16,7 @@ interface MovementWin {
   title: string
   date: string
   description?: string
-  category?: string
+  campaign?: string
   link?: string
   memberOrg: {
     _id: string
@@ -29,11 +29,12 @@ async function getMovementWins(): Promise<MovementWin[]> {
   return client.fetch(MOVEMENT_WINS_QUERY)
 }
 
-const categoryLabels: Record<string, string> = {
-  divestment: 'Divestment',
-  'policy-change': 'Policy Change',
-  'research-ban': 'Research Ban',
-  transparency: 'Transparency',
+const campaignLabels: Record<string, string> = {
+  'fossil-free-research': 'Fossil Free Research',
+  'campus-decarbonization': 'Campus Decarbonization',
+  'green-new-deal': 'Green New Deal',
+  'fossil-free-careers': 'Fossil Free Careers',
+  'fossil-fuel-divestment': 'Fossil Fuel Divestment',
   other: 'Other',
 }
 
@@ -72,7 +73,7 @@ export default async function StudentWinsPage() {
         </ScrollReveal>
 
         {wins.length > 0 ? (
-          <WinsTimeline wins={wins} categoryLabels={categoryLabels} />
+          <WinsTimeline wins={wins} campaignLabels={campaignLabels} />
         ) : (
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center">
             <p className="text-slate-600">
