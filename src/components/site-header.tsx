@@ -993,7 +993,18 @@ export function SiteHeader() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 12)
+      // Use hysteresis to prevent rapid toggling at the threshold
+      // This avoids the "shaking" effect from layout changes affecting scroll position
+      const scrollY = window.scrollY
+      setScrolled((prev) => {
+        if (prev) {
+          // Already scrolled: only un-scroll if we go back above threshold
+          return scrollY > 4
+        } else {
+          // Not scrolled: only become scrolled if we pass higher threshold
+          return scrollY > 20
+        }
+      })
     }
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -1018,10 +1029,10 @@ export function SiteHeader() {
     <>
       <header
         className={classNames(
-          'sticky top-0 z-50 border-b border-slate-200/40 py-3 transition-all duration-200',
+          'sticky top-0 z-50 border-b border-slate-200/40 py-3 lg:py-5 transition-all duration-200',
           scrolled
             ? 'bg-white/80 shadow-[0_12px_40px_-24px_rgba(15,23,42,0.35)] backdrop-blur supports-[backdrop-filter]:bg-white/70'
-            : 'bg-white/95 lg:py-5 backdrop-blur',
+            : 'bg-white/95 backdrop-blur',
         )}
       >
         <div className="page-container flex items-center justify-between gap-4">
