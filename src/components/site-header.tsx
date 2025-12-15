@@ -753,123 +753,6 @@ function DesktopNav({ entries }: { entries: NavEntry[] }) {
   )
 }
 
-function MobileMenuSection({
-  menu,
-  expanded,
-  onToggle,
-  onNavigate,
-}: {
-  menu: NavMenu
-  expanded: boolean
-  onToggle: () => void
-  onNavigate: () => void
-}) {
-  const contentId = useId()
-  const contentRef = useRef<HTMLDivElement>(null)
-  const [contentHeight, setContentHeight] = useState(0)
-
-  useEffect(() => {
-    const node = contentRef.current
-    if (!node) return
-
-    const updateHeight = () => {
-      const styles = window.getComputedStyle(node)
-      const marginTop = parseFloat(styles.marginTop) || 0
-      const marginBottom = parseFloat(styles.marginBottom) || 0
-      setContentHeight(node.scrollHeight + marginTop + marginBottom)
-    }
-
-    updateHeight()
-
-    if (typeof ResizeObserver === 'undefined') {
-      return
-    }
-
-    const observer = new ResizeObserver(() => updateHeight())
-    observer.observe(node)
-
-    return () => observer.disconnect()
-  }, [menu])
-
-  return (
-    <div>
-      <button
-        type="button"
-        onClick={onToggle}
-        className="flex w-full items-center justify-between gap-3 text-left text-base font-semibold text-slate-800"
-        aria-expanded={expanded}
-        aria-controls={contentId}
-      >
-        {menu.label}
-        <svg
-          className={classNames(
-            'h-4 w-4 transition-transform',
-            expanded && 'rotate-180 text-brand-primary',
-          )}
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <path
-            d="M4.5 6L8 9.5L11.5 6"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
-      <div
-        id={contentId}
-        aria-hidden={!expanded}
-        className={classNames(
-          'overflow-hidden transition-[max-height,opacity] duration-200 ease-out',
-          expanded ? 'opacity-100' : 'pointer-events-none opacity-0',
-        )}
-        style={{
-          maxHeight: expanded ? contentHeight : 0,
-        }}
-      >
-        <div
-          ref={contentRef}
-          className="mt-3 stack stack-dense border-l border-slate-200 pl-4 text-sm text-slate-600"
-        >
-          {menu.columns.map((column) => (
-            <div
-              key={`${menu.label}-${column.title}`}
-              className="stack stack-compact"
-            >
-              <p className="eyebrow text-xs font-semibold text-brand-secondary/80">
-                {column.title}
-              </p>
-              <div className="stack stack-compact">
-                {column.items.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={onNavigate}
-                    className="block rounded-lg bg-slate-50/60 px-3 py-2 text-slate-700 transition hover:bg-brand-primary/10 hover:text-brand-primary"
-                  >
-                    <span className="block text-sm font-medium">
-                      {item.label}
-                    </span>
-                    {item.description ? (
-                      <span className="mt-1 block text-xs text-slate-500">
-                        {item.description}
-                      </span>
-                    ) : null}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
-
 function MobileNav({
   entries,
   open,
@@ -879,11 +762,11 @@ function MobileNav({
   open: boolean
   onClose: () => void
 }) {
-  const [expandedSection, setExpandedSection] = useState<string | null>(null)
+  const [activeMenu, setActiveMenu] = useState<NavMenu | null>(null)
 
   useEffect(() => {
     if (!open) {
-      setExpandedSection(null)
+      setActiveMenu(null)
     }
   }, [open])
 
@@ -899,87 +782,202 @@ function MobileNav({
     }
   }, [open])
 
+  // Flatten all items from active menu
+  const activeMenuItems = activeMenu
+    ? activeMenu.columns.flatMap((col) => col.items)
+    : []
+
   return (
     <div
       aria-hidden={!open}
       className={classNames(
-        'fixed inset-0 z-[70] transition duration-200 ease-out lg:hidden',
+        'fixed inset-0 z-[70] flex flex-col bg-white transition-opacity duration-300 ease-out lg:hidden',
         open
-          ? 'pointer-events-auto bg-slate-900/40 opacity-100'
+          ? 'pointer-events-auto opacity-100'
           : 'pointer-events-none opacity-0',
       )}
     >
-      <div
-        className={classNames(
-          'ml-auto flex h-full w-full max-w-sm flex-col bg-white shadow-2xl transition-transform duration-200 ease-out',
-          open ? 'translate-x-0' : 'translate-x-full',
-        )}
-      >
-        <div className="flex items-center justify-between border-b border-slate-200 px-6 py-5">
-          <span className="eyebrow text-xs font-semibold tracking-[0.4em] text-brand-secondary">
-            Menu
-          </span>
+      {/* Header */}
+      <div className="page-container flex items-center justify-between gap-4 py-3">
+        {/* Left side: back button or logo */}
+        {activeMenu ? (
           <button
             type="button"
-            onClick={onClose}
-            className="rounded-full p-2 text-slate-500 transition hover:text-brand-primary focus-visible:outline-none"
-            aria-label="Close navigation"
+            onClick={() => setActiveMenu(null)}
+            className="-ml-2 rounded-full p-2 text-slate-400 transition hover:text-slate-600 focus-visible:outline-none"
+            aria-label="Back to menu"
           >
             <svg
               className="h-5 w-5"
-              viewBox="0 0 20 20"
+              viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M6 6L14 14M6 14L14 6"
+                d="M15 6L9 12L15 18"
                 stroke="currentColor"
-                strokeWidth="1.6"
+                strokeWidth="1.5"
                 strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </button>
-        </div>
-        <nav className="stack stack-tight flex-1 overflow-y-auto px-6 py-6">
-          {entries.map((entry) => {
-            if (isNavMenu(entry)) {
-              const expanded = expandedSection === entry.label
-              return (
-                <MobileMenuSection
-                  key={entry.label}
-                  menu={entry}
-                  expanded={expanded}
-                  onToggle={() =>
-                    setExpandedSection((prev) =>
-                      prev === entry.label ? null : entry.label,
-                    )
-                  }
-                  onNavigate={onClose}
-                />
-              )
-            }
-
-            return (
-              <Link
-                key={entry.label}
-                href={entry.href}
-                onClick={onClose}
-                className="block text-base font-semibold text-slate-800 transition hover:text-brand-primary"
-              >
-                {entry.label}
-              </Link>
-            )
-          })}
-        </nav>
-        <div className="border-t border-slate-200 px-6 py-6">
-          <Link
-            href="/take-action"
-            onClick={onClose}
-            className="inline-flex w-full items-center justify-center rounded-full bg-brand-primary px-4 py-3 text-sm font-semibold text-white transition hover:bg-brand-secondary"
-          >
-            Take Action
+        ) : (
+          <Link href="/" onClick={onClose} className="flex items-center gap-4">
+            <div className="relative h-11 w-11 overflow-hidden rounded-full shadow-[0_4px_12px_-4px_rgba(96,55,157,0.25)]">
+              <Image
+                src="/purple-logo.png"
+                alt="Campus Climate Network logo"
+                fill
+                sizes="44px"
+                className="object-contain"
+              />
+            </div>
           </Link>
-        </div>
+        )}
+
+        {/* Close button */}
+        <button
+          type="button"
+          onClick={onClose}
+          className="-mr-2 rounded-full p-2 text-slate-400 transition hover:text-slate-600 focus-visible:outline-none"
+          aria-label="Close navigation"
+        >
+          <svg
+            className="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 6L18 18M6 18L18 6"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* Navigation content */}
+      <div className="relative flex-1 overflow-hidden">
+        {/* Main menu */}
+        <nav
+          className={classNames(
+            'page-container absolute inset-0 overflow-y-auto py-4 transition-transform duration-[400ms]',
+            activeMenu ? '-translate-x-full' : 'translate-x-0',
+          )}
+          style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}
+        >
+          <ul className="space-y-1">
+            {entries.map((entry, index) => {
+              if (isNavMenu(entry)) {
+                return (
+                  <li
+                    key={entry.label}
+                    style={{
+                      animationDelay: open && !activeMenu ? `${index * 50}ms` : '0ms',
+                    }}
+                    className={classNames(
+                      open && !activeMenu && 'animate-fade-in-up',
+                    )}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setActiveMenu(entry)}
+                      className="flex w-full items-center justify-between gap-4 py-2 text-left text-[1.75rem] font-semibold text-slate-900 transition hover:text-brand-primary"
+                    >
+                      {entry.label}
+                      <svg
+                        className="h-5 w-5 shrink-0 text-slate-400"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M9 6L15 12L9 18"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </li>
+                )
+              }
+
+              return (
+                <li
+                  key={entry.label}
+                  style={{
+                    animationDelay: open && !activeMenu ? `${index * 50}ms` : '0ms',
+                  }}
+                  className={classNames(
+                    open && !activeMenu && 'animate-fade-in-up',
+                  )}
+                >
+                  <Link
+                    href={entry.href}
+                    onClick={onClose}
+                    className="block py-2 text-[1.75rem] font-semibold text-slate-900 transition hover:text-brand-primary"
+                  >
+                    {entry.label}
+                  </Link>
+                </li>
+              )
+            })}
+            <li
+              style={{
+                animationDelay: open && !activeMenu ? `${entries.length * 50}ms` : '0ms',
+              }}
+              className={classNames(
+                open && !activeMenu && 'animate-fade-in-up',
+              )}
+            >
+              <Link
+                href="/take-action"
+                onClick={onClose}
+                className="block py-2 text-[1.75rem] font-semibold text-brand-primary transition hover:text-brand-secondary"
+              >
+                Take Action
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Submenu */}
+        <nav
+          className={classNames(
+            'page-container absolute inset-0 overflow-y-auto py-4 transition-transform duration-[400ms]',
+            activeMenu ? 'translate-x-0' : 'translate-x-full',
+          )}
+          style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}
+        >
+          {activeMenu && (
+            <ul className="space-y-4">
+              {activeMenuItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={onClose}
+                    className="block py-2 transition hover:text-brand-primary"
+                  >
+                    <span className="block text-[1.75rem] font-semibold text-slate-900">
+                      {item.label}
+                    </span>
+                    {item.description && (
+                      <span className="mt-1 block text-sm text-slate-500">
+                        {item.description}
+                      </span>
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </nav>
       </div>
     </div>
   )
@@ -1050,20 +1048,19 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setMobileOpen(true)}
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-2 text-sm font-medium text-slate-600 shadow-[0_1px_3px_-1px_rgba(0,0,0,0.08)] transition hover:border-brand-primary/40 hover:text-brand-primary focus-visible:outline-none lg:hidden"
+            className="-mr-2 rounded-full p-2 text-slate-500 transition hover:text-brand-primary focus-visible:outline-none lg:hidden"
             aria-label="Open navigation"
           >
-            Menu
             <svg
-              className="h-4 w-4"
+              className="h-5 w-5"
               viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M3.5 6H16.5M3.5 10H16.5M3.5 14H16.5"
+                d="M3 5.5H17M3 10H17M3 14.5H17"
                 stroke="currentColor"
-                strokeWidth="1.6"
+                strokeWidth="1.5"
                 strokeLinecap="round"
               />
             </svg>
