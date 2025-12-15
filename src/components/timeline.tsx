@@ -89,10 +89,7 @@ export function Timeline({ items }: TimelineProps) {
       {/* The vertical line */}
       <div className="timeline-track">
         <div className="timeline-track-bg" />
-        <div
-          ref={progressRef}
-          className="timeline-track-progress"
-        />
+        <div ref={progressRef} className="timeline-track-progress" />
       </div>
 
       {/* Timeline items */}

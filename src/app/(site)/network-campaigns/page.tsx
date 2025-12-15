@@ -30,7 +30,7 @@ const campaigns = [
     slug: 'fossil-free-research',
     title: 'Fossil Free Research',
     description:
-      "For decades, the fossil fuel industry has sought to mislead the public on the realities of climate change and obstruct climate action. Fossil fuel funded research provides Big Oil with undue legitimacy, bolsters industry greenwashing, and skews the research we need to inform a just energy transition. It&apos;s time to end fossil fuel-funded research at our schools.",
+      'For decades, the fossil fuel industry has sought to mislead the public on the realities of climate change and obstruct climate action. Fossil fuel funded research provides Big Oil with undue legitimacy, bolsters industry greenwashing, and skews the research we need to inform a just energy transition. It&apos;s time to end fossil fuel-funded research at our schools.',
   },
   {
     slug: 'campus-decarbonization',
@@ -42,7 +42,7 @@ const campaigns = [
     slug: 'green-new-deal',
     title: 'Green New Deal for campuses',
     description:
-      "To achieve a just energy transition, we will have to change everything. Let&apos;s start with our universities.",
+      'To achieve a just energy transition, we will have to change everything. Let&apos;s start with our universities.',
   },
   {
     slug: 'fossil-free-careers',
@@ -130,7 +130,9 @@ export default async function NetworkCampaignsPage() {
                   <h3 className="text-lg font-semibold text-brand-primary">
                     {campaign.title}
                   </h3>
-                  <p className="text-sm text-slate-600">{campaign.description}</p>
+                  <p className="text-sm text-slate-600">
+                    {campaign.description}
+                  </p>
                 </div>
 
                 {/* Recent Wins Section */}

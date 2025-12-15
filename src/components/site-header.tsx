@@ -876,7 +876,8 @@ function MobileNav({
                   <li
                     key={entry.label}
                     style={{
-                      animationDelay: open && !activeMenu ? `${index * 50}ms` : '0ms',
+                      animationDelay:
+                        open && !activeMenu ? `${index * 50}ms` : '0ms',
                     }}
                     className={classNames(
                       open && !activeMenu && 'animate-fade-in-up',
@@ -912,7 +913,8 @@ function MobileNav({
                 <li
                   key={entry.label}
                   style={{
-                    animationDelay: open && !activeMenu ? `${index * 50}ms` : '0ms',
+                    animationDelay:
+                      open && !activeMenu ? `${index * 50}ms` : '0ms',
                   }}
                   className={classNames(
                     open && !activeMenu && 'animate-fade-in-up',
@@ -930,7 +932,8 @@ function MobileNav({
             })}
             <li
               style={{
-                animationDelay: open && !activeMenu ? `${entries.length * 50}ms` : '0ms',
+                animationDelay:
+                  open && !activeMenu ? `${entries.length * 50}ms` : '0ms',
               }}
               className={classNames(
                 open && !activeMenu && 'animate-fade-in-up',

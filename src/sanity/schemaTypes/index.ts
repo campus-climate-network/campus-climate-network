@@ -8,5 +8,12 @@ import { memberOrgType } from './memberOrgType'
 import { movementWinType } from './movementWinType'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContentType, categoryType, postType, authorType, memberOrgType, movementWinType],
+  types: [
+    blockContentType,
+    categoryType,
+    postType,
+    authorType,
+    memberOrgType,
+    movementWinType,
+  ],
 }

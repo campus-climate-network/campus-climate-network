@@ -14,7 +14,7 @@ const footerColumns: FooterColumn[] = [
       column.items.map((item) => ({
         label: item.label,
         href: item.href,
-      }))
+      })),
     ),
   })),
   {

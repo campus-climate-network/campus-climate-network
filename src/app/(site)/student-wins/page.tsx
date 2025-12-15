@@ -54,8 +54,8 @@ export default async function StudentWinsPage() {
           <p className="text-base text-slate-700">
             Every victory here represents countless hours of organizing,
             coalition-building, and unwavering commitment from students who
-            refused to accept the status quo. These wins prove that when students
-            unite, institutions listen.
+            refused to accept the status quo. These wins prove that when
+            students unite, institutions listen.
           </p>
         </div>
       </section>
@@ -67,7 +67,8 @@ export default async function StudentWinsPage() {
               Timeline of victories
             </h2>
             <p className="text-base text-slate-600">
-              A chronological record of wins achieved by our member organizations.
+              A chronological record of wins achieved by our member
+              organizations.
             </p>
           </div>
         </ScrollReveal>
@@ -86,4 +87,3 @@ export default async function StudentWinsPage() {
     </div>
   )
 }
-

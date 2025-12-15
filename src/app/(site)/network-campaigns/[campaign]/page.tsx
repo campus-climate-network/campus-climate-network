@@ -91,7 +91,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { campaign } = await params
   const config = campaignConfig[campaign]
 
@@ -146,7 +148,9 @@ export default async function CampaignDetailPage({ params }: PageProps) {
         <ScrollReveal variant="fade-up">
           <div className="stack stack-dense text-left">
             <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-              {wins.length > 0 ? `${wins.length} wins and counting` : 'No wins yet'}
+              {wins.length > 0
+                ? `${wins.length} wins and counting`
+                : 'No wins yet'}
             </h2>
             <p className="text-base text-slate-600">
               {wins.length > 0
@@ -205,4 +209,3 @@ export default async function CampaignDetailPage({ params }: PageProps) {
     </div>
   )
 }
-
