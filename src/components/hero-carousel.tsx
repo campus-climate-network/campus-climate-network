@@ -32,7 +32,7 @@ export function HeroCarousel({ photos }: HeroCarouselProps) {
       {/* Mobile: Single static image */}
       <div className="md:hidden">
         <div className="overflow-hidden rounded-3xl border border-white/20">
-          <div className="relative aspect-[3/4]">
+          <div className="relative aspect-3/4">
             <Image
               src={firstPhoto.image}
               alt={firstPhoto.alt}
@@ -47,7 +47,7 @@ export function HeroCarousel({ photos }: HeroCarouselProps) {
       {/* Desktop: Full carousel */}
       <div className="relative hidden md:block">
         <div className="overflow-hidden rounded-3xl border border-white/20">
-          <div className="relative aspect-[3/4]">
+          <div className="relative aspect-3/4">
             <Image
               key={activePhoto.image}
               src={activePhoto.image}
@@ -87,7 +87,9 @@ export function HeroCarousel({ photos }: HeroCarouselProps) {
                 type="button"
                 onClick={() => goTo(index)}
                 className={`h-2 w-2 rounded-full transition ${
-                  current === index ? 'bg-white' : 'bg-white/50 hover:bg-white/70'
+                  current === index
+                    ? 'bg-white'
+                    : 'bg-white/50 hover:bg-white/70'
                 }`}
                 aria-label={`View photo ${index + 1}`}
                 aria-current={current === index}
