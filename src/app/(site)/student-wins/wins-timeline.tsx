@@ -144,7 +144,7 @@ export function WinsTimeline({ wins, campaignLabels }: WinsTimelineProps) {
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between gap-2 mb-1">
+                  <div className="flex items-center justify-between gap-2 mb-2">
                     <span className="text-xs font-medium text-slate-500">
                       {formatDate(win.date)}
                     </span>
@@ -154,18 +154,18 @@ export function WinsTimeline({ wins, campaignLabels }: WinsTimelineProps) {
                       </span>
                     )}
                   </div>
-                  <h3 className="text-sm sm:text-base font-semibold text-slate-900 leading-snug">
-                    <span className="text-brand-primary">
-                      {win.memberOrg.name}
-                    </span>{' '}
-                    {win.title.replace(win.memberOrg.name, '').trim()}
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug mb-1">
+                    {win.title}
                   </h3>
+                  <p className="text-sm font-medium text-brand-primary">
+                    — {win.memberOrg.name}
+                  </p>
                   {win.link && (
                     <a
                       href={win.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 mt-1 text-xs font-medium text-brand-secondary hover:underline"
+                      className="inline-flex items-center gap-1 mt-2 text-xs font-medium text-brand-secondary hover:underline"
                     >
                       Read more →
                     </a>
