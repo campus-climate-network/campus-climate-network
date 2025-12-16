@@ -48,7 +48,7 @@ export default async function StudentWinsPage() {
             Movement
           </p>
           <h1 className="text-3xl font-semibold text-brand-primary sm:text-4xl">
-            Student wins
+            Student wins.
           </h1>
           <p className="text-base text-slate-700">
             Every victory here represents countless hours of organizing,

@@ -41,6 +41,10 @@ export function SiteFooter() {
               they need to run winning campaigns on campus.
             </p>
           </div>
+
+          <p className="text-xs text-slate-400">
+            © Campus Climate Network {new Date().getFullYear()}
+          </p>
           <p className="max-w-xs text-xs text-slate-400">
             Campus Climate Network is a fiscally sponsored project of{' '}
             <a
@@ -53,14 +57,10 @@ export function SiteFooter() {
             </a>
             .
           </p>
-
-          <p className="text-xs text-slate-400">
-            © Campus Climate Network {new Date().getFullYear()}
-          </p>
           <p className="text-xs text-slate-400">
             This website is{' '}
             <a
-              href="https://github.com/campusclimatenetwork/website"
+              href="https://github.com/dwahbe/campus-climate-network"
               target="_blank"
               rel="noopener noreferrer"
               className="underline transition hover:text-slate-300"
