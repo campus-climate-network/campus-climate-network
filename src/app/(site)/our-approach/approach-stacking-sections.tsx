@@ -101,33 +101,31 @@ function StackingSection({
   isFirst = false,
 }: StackingSectionProps & { isFirst?: boolean }) {
   const style = themeStyles[theme]
-  // +1 for the title card
-  const totalCards = cards.length + 1
   // Each card needs ~120vh of scroll distance for comfortable reading pace
-  const sectionHeight = totalCards * 120
+  const sectionHeight = (cards.length + 1) * 120
 
   return (
     <section className={`${style.section} ${!isFirst ? '-mt-[15vh]' : ''}`}>
-      <StackingCards totalCards={totalCards} style={{ height: `${sectionHeight}vh` }}>
-        {/* Title card */}
-        <StackingCardItem index={0} className="h-screen">
-          <div className="page-container h-full flex items-center px-6 sm:px-8">
+      <StackingCards
+        totalCards={cards.length}
+        style={{ height: `${sectionHeight}vh` }}
+      >
+        {/* Title - NOT a stacking card, just a regular div like in the example */}
+        <div className="relative h-[50vh] w-full z-10 flex items-center">
+          <div className="page-container px-6 sm:px-8">
             <h2
               className={`text-3xl sm:text-5xl lg:text-7xl font-bold ${style.header} max-w-3xl leading-tight`}
             >
               {title}
             </h2>
           </div>
-        </StackingCardItem>
+        </div>
 
-        {/* Content cards */}
+        {/* Content cards - these are the only StackingCardItems */}
         {cards.map((card, index) => (
-          <StackingCardItem
-            key={card.title}
-            index={index + 1}
-            className="h-screen"
-          >
-            <div className="page-container h-full flex items-center px-4 sm:px-8">
+          <StackingCardItem key={card.title} index={index} className="h-screen">
+            {/* Card positioned from top for consistent stacking */}
+            <div className="page-container pt-[10vh] px-4 sm:px-8">
               <div
                 className={`relative w-full max-w-4xl rounded-2xl sm:rounded-3xl border ${style.card} p-6 sm:p-10 lg:p-16 overflow-hidden`}
               >
