@@ -94,26 +94,27 @@ const themeStyles = {
   },
 }
 
-function StackingSection({ title, cards, theme }: StackingSectionProps) {
+function StackingSection({
+  title,
+  cards,
+  theme,
+  isFirst = false,
+}: StackingSectionProps & { isFirst?: boolean }) {
   const style = themeStyles[theme]
   // +1 for the title card
   const totalCards = cards.length + 1
+  // Each card needs ~120vh of scroll distance for comfortable reading pace
+  const sectionHeight = totalCards * 120
 
   return (
-    <section className={`${style.section}`}>
+    <section className={`${style.section} ${!isFirst ? '-mt-[15vh]' : ''}`}>
       <StackingCards
         totalCards={totalCards}
-        // Shorter scroll distance on mobile (70vh per card) vs desktop (100vh)
-        className="h-[calc(var(--total-cards)*70vh)] sm:h-[calc(var(--total-cards)*85vh)] lg:h-[calc(var(--total-cards)*100vh)]"
-        style={{ '--total-cards': totalCards } as React.CSSProperties}
+        style={{ height: `${sectionHeight}vh` }}
         scaleMultiplier={0.02}
       >
         {/* Title card */}
-        <StackingCardItem
-          index={0}
-          className="h-[70vh] sm:h-[85vh] lg:h-screen"
-          topPosition="5%"
-        >
+        <StackingCardItem index={0} className="h-screen" topPosition="5%">
           <div className="page-container h-full flex items-center px-6 sm:px-8">
             <h2
               className={`text-3xl sm:text-5xl lg:text-7xl font-bold ${style.header} max-w-3xl leading-tight`}
@@ -128,8 +129,8 @@ function StackingSection({ title, cards, theme }: StackingSectionProps) {
           <StackingCardItem
             key={card.title}
             index={index + 1}
-            className="h-[70vh] sm:h-[85vh] lg:h-screen"
-            topPosition={`${7 + (index + 1) * 2}%`}
+            className="h-screen"
+            topPosition={`${8 + index * 2.5}%`}
           >
             <div className="page-container h-full flex items-center px-4 sm:px-8">
               <div
@@ -170,9 +171,10 @@ export function ApproachStackingSection() {
         title="What we're up against"
         cards={challenges}
         theme="dark"
+        isFirst
       />
       <StackingSection title="How we unite" cards={pillars} theme="green" />
-      <StackingSection title="What we do" cards={whatWeDo} theme="cream" />
+      <StackingSection title="How we win" cards={whatWeDo} theme="cream" />
     </>
   )
 }
