@@ -14,7 +14,7 @@ const reports = [
     title: 'Accountable Allies',
     subtitle: 'The Undue Influence of Fossil Fuel Money in Academia',
     image: '/reports/Aug 13 Screenshot from Notion.png',
-    organization: 'Campus Climate Network',
+    organization: 'Data for Progress & Campus Climate Network',
     year: '2024',
     link: 'https://drive.google.com/file/d/1GTG8_JpqbxMaxLsPASZ4IBjl1ZBgiqeQ/view?usp=drive_link',
   },
@@ -23,7 +23,7 @@ const reports = [
     subtitle:
       'The University of Toronto and Its Ties to the Fossil Fuel Industry',
     image: '/reports/Aug 13 Screen Shot from Notion (2).png',
-    organization: 'University of Toronto Divestment Campaign',
+    organization: 'Climate Justice University of Toronto',
     year: '2023',
     link: 'https://drive.google.com/file/d/1qh-RbNEtsR2705PErIK7OoRsc7YjbYu0/view?usp=drive_link',
   },
