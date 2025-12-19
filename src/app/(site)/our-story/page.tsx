@@ -6,7 +6,7 @@ import { Timeline } from '@/components/timeline'
 export const metadata: Metadata = {
   title: 'Our Story',
   description:
-    'Learn how Campus Climate Network emerged from the student divestment movement to become a coalition of 80+ organizations fighting for climate justice on campus.',
+    'Learn how Campus Climate Network emerged from the student divestment movement to become a coalition of 50+ organizations fighting for climate justice on campus.',
 }
 
 const timelineEvents = [
@@ -67,7 +67,7 @@ export default function OurStoryPage() {
             How we got here.
           </h1>
           <p className="text-base text-slate-700">
-            From a grassroots open letter to a coalition of 80+ campus
+            From a grassroots open letter to a coalition of 50+ campus
             organizations, here&apos;s the journey of our movement.
           </p>
         </div>

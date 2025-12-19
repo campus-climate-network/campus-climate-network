@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       'Campus Climate Network | Students Organizing for Climate Justice',
   },
   description:
-    'Campus Climate Network organizes students to win fossil-free research and climate justice on campus. Join 80+ member organizations nationwide.',
+    'Campus Climate Network organizes students to win fossil-free research and climate justice on campus. Join 50+ member organizations nationwide.',
 }
 
 const pressLogos = [
