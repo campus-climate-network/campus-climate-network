@@ -97,12 +97,15 @@ export default function FFRCampaignPage() {
               Decades of deception
             </h2>
             <p className="text-base text-slate-600">
-              Polluters needed the prestige of elite institutions to sanitize
-              their biased research, so they poured money into centers,
-              departments, and labs—poisoning the very places meant to advance
-              human knowledge. They leveraged that borrowed credibility to shape
-              public policy and law, keeping business-as-usual intact while the
-              planet burned.
+              The fossil fuel industry leverages the prestige and credibility of
+              our elite institutions to make their biased reports believable. So
+              while poisoning our planet, these companies also poisoned our
+              schools. They took over our centers of learning and research and
+              used them to their advantage, spreading their toxic influence all
+              over our academic processes. They then used the reports they
+              created to influence public policy and law, strategically pushing
+              for ways to keep business as usual untouched. All while wreaking
+              havoc on the planet.
             </p>
           </div>
         </ScrollReveal>
@@ -115,11 +118,10 @@ export default function FFRCampaignPage() {
               Why Fossil Free Research matters
             </h2>
             <p className="text-base text-slate-600">
-              We are not letting Big Oil get away with capturing our campuses.
-              Students and faculty are turning universities into sites of
-              innovation and real climate solutions—not pipelines for corporate
-              PR and extraction. We are kicking fossil fuel money out of schools
-              for good.
+              Students and faculty want to make their universities sites of
+              innovation and breeding grounds for real climate solutions. We
+              want to create the future we want and deserve, not help destroy
+              it. So we are kicking Big Oil out of schools.
             </p>
           </div>
         </ScrollReveal>
@@ -156,10 +158,11 @@ export default function FFRCampaignPage() {
               </h2>
               <p className="text-base text-slate-600">
                 Fossil Free Research is the flagship campaign of Campus Climate
-                Network. We have already uncovered millions of dollars in hidden
-                fossil funding, winning Fossil Free Research policies from
-                individual faculty members to entire departments, centers, and
-                universities. Your school could be next.
+                Network. Already, we’ve uncovered millions of dollars in
+                research funding at our universities and won Fossil Free
+                Research policies among individual faculty members, academic
+                departments, at centers and institutes, and university-wide.
+                Your school could be next.
               </p>
             </div>
             <Link
