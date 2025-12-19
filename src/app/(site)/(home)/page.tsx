@@ -227,9 +227,8 @@ export default async function Home() {
                 campus
               </h2>
               <p className="text-base text-slate-600 sm:text-lg">
-                Our members share organizing playbooks, tactical trainings, and
-                cross-campus solidarity so every institution can move faster
-                toward fossil-free research.
+                We share strategies, coordinate national actions, and build the
+                movement infrastructure so no campus fights Big Oil alone.
               </p>
               <div className="flex flex-wrap gap-3 text-sm font-semibold">
                 <Link
