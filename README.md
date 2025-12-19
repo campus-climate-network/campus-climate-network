@@ -83,7 +83,7 @@ A couple notes:
 
 ## Design & Development
 
-**Designed and developed by** [Dylan Wahbe](https://dylanwahbe.com)
+**Designed and developed by** [Dylan Wahbe](https://dylanwahbe.com).
 
 ## Questions
 
