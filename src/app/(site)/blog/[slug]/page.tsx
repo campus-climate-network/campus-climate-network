@@ -296,4 +296,3 @@ export default async function PostPage(props: PageProps<'/blog/[slug]'>) {
     </div>
   )
 }
-

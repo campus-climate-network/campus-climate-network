@@ -55,15 +55,16 @@ export default function OurFundersPage() {
               We believe in transparency
             </h2>
             <p className="text-base text-slate-600 max-w-3xl">
-              Funding matters. At Campus Climate Network, we believe that funding
-              transparency is an essential mechanism of accountability. The vast
-              majority of funding for CCN comes from philanthropic foundations
-              (listed below) with nominal support from small individual
-              contributions. We will never accept funding from fossil fuel
-              companies, fossil fuel industry subsidiaries, or individuals with
-              close ties to the fossil fuel industry. When a donor wishes to keep
-              their identity anonymous, they are vetted by the CCN team to ensure
-              that the donor&apos;s values are aligned with those of CCN.
+              Funding matters. At Campus Climate Network, we believe that
+              funding transparency is an essential mechanism of accountability.
+              The vast majority of funding for CCN comes from philanthropic
+              foundations (listed below) with nominal support from small
+              individual contributions. We will never accept funding from fossil
+              fuel companies, fossil fuel industry subsidiaries, or individuals
+              with close ties to the fossil fuel industry. When a donor wishes
+              to keep their identity anonymous, they are vetted by the CCN team
+              to ensure that the donor&apos;s values are aligned with those of
+              CCN.
             </p>
           </div>
         </ScrollReveal>
