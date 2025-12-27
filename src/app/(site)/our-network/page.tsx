@@ -154,7 +154,7 @@ export default async function OurNetworkPage() {
                 className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
                 href="/take-action"
               >
-                Apply for membership
+                Join us
               </Link>
               <a
                 className="inline-flex items-center rounded-full border border-brand-primary px-5 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
