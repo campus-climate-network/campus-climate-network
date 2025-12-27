@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ScrollReveal, StaggerReveal } from '@/components/scroll-reveal'
+import { ScrollReveal } from '@/components/scroll-reveal'
 import { client } from '@/sanity/lib/client'
 import { urlFor } from '@/sanity/lib/image'
 import { MemberMapWrapper } from '@/components/member-map-wrapper'
@@ -89,51 +89,6 @@ export default async function OurNetworkPage() {
               Join us
             </Link>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-slate-900 section-dark -mt-8 sm:-mt-10 lg:-mt-12">
-        <div className="page-container stack text-left text-white">
-          <ScrollReveal variant="fade-up">
-            <div className="stack stack-dense">
-              <h2 className="text-2xl font-semibold sm:text-3xl">
-                Membership benefits
-              </h2>
-              <p className="text-sm text-slate-200">
-                Tools and support to help campus organizers win faster.
-              </p>
-            </div>
-          </ScrollReveal>
-          <StaggerReveal
-            staggerDelay={120}
-            variant="blossom"
-            className="grid gap-6 md:grid-cols-3"
-          >
-            {[
-              {
-                title: 'Organizing playbooks',
-                body: 'Campaign templates, research briefs, and rapid-response messaging that students can adapt for their campuses.',
-              },
-              {
-                title: 'Training & gatherings',
-                body: 'College Climate Gatherings, monthly skillshares, and mentorship that connect organizers across regions.',
-              },
-              {
-                title: 'Mini-grants & partnerships',
-                body: 'Funding, communications support, and national amplification to scale bold campus campaigns.',
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="stack stack-dense rounded-3xl bg-white/10 p-6"
-              >
-                <h3 className="text-lg font-semibold text-brand-accent">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-slate-100">{item.body}</p>
-              </div>
-            ))}
-          </StaggerReveal>
         </div>
       </section>
 

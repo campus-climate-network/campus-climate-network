@@ -35,8 +35,7 @@ export default function DonatePage() {
           </h1>
           <p className="text-base text-slate-700">
             Every dollar supports organizing infrastructure, training programs,
-            and rapid-response actions led by students on the frontlines of
-            campus climate fights.
+            and rapid-response actions led by students on the frontlines.
           </p>
         </div>
       </section>
