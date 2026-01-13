@@ -93,74 +93,30 @@ export default function NetworkCampaignsPage() {
         </StaggerReveal>
       </section>
 
-      <section className="bg-slate-900 section-dark">
-        <div className="page-container stack text-left text-white">
+      <section className="bg-brand-primary section-dark">
+        <div className="page-container text-left text-white">
           <ScrollReveal variant="fade-up">
-            <div className="stack stack-dense">
-              <h2 className="text-2xl font-semibold sm:text-3xl">
-                What we offer campaign teams
-              </h2>
-              <p className="text-sm text-slate-200">
-                Infrastructure that helps student organizers move fast and stay
-                connected.
-              </p>
+            <div className="stack stack-cozy">
+              <div className="stack stack-dense">
+                <h2 className="text-2xl font-semibold sm:text-3xl">
+                  Get your campaign started today
+                </h2>
+                <p className="text-base text-white/80">
+                  Whether you are just starting out or looking to scale your
+                  campaign, we can help you get started.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  className="inline-flex items-center rounded-full bg-brand-accent px-5 py-2 text-sm font-semibold text-slate-900 transition hover:bg-brand-accent/80"
+                  href="/take-action"
+                >
+                  Schedule an onboarding call
+                </Link>
+              </div>
             </div>
           </ScrollReveal>
-          <StaggerReveal
-            staggerDelay={120}
-            variant="blossom"
-            className="grid gap-6 md:grid-cols-3"
-          >
-            {[
-              {
-                title: 'Strategy labs',
-                body: 'Monthly campaign labs and peer coaching to refine demands, escalation plans, and power maps.',
-              },
-              {
-                title: 'Messaging & media',
-                body: "Shared talking points, media trainings, and amplification through CCN's communications channels.",
-              },
-              {
-                title: 'Rapid-response support',
-                body: 'Mini-grants and mobilization infrastructure for actions, digital storms, and high-impact escalations.',
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="stack stack-dense rounded-3xl bg-white/10 p-6"
-              >
-                <h3 className="text-lg font-semibold text-brand-accent">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-slate-100">{item.body}</p>
-              </div>
-            ))}
-          </StaggerReveal>
         </div>
-      </section>
-
-      <section className="page-container text-left">
-        <ScrollReveal variant="fade-up">
-          <div className="stack stack-cozy">
-            <div className="stack stack-dense">
-              <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-                Get your campaign started today
-              </h2>
-              <p className="text-base text-slate-600">
-                Whether you are just starting out or looking to scale your
-                campaign, we can help you get started.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-secondary"
-                href="/take-action"
-              >
-                Schedule an onboarding call
-              </Link>
-            </div>
-          </div>
-        </ScrollReveal>
       </section>
     </div>
   )

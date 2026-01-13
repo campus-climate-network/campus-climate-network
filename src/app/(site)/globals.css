@@ -204,6 +204,11 @@ h1 {
   padding-bottom: var(--spacing-section-sm);
 }
 
+/* When a dark section is the last child, eliminate the page-wrapper bottom padding gap */
+.page-wrapper > .section-dark:last-child {
+  margin-bottom: calc(var(--spacing-page-bottom) * -1);
+}
+
 .section-accent {
   padding-top: var(--spacing-section);
   padding-bottom: var(--spacing-section);
